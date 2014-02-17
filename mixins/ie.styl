@@ -1,0 +1,14 @@
+//
+// INTERNET EXPLORER
+// =================
+//
+
+
+ie($version, $strict = false)
+  if ($is-ie == true)
+    if($strict == true)
+      if ($is-ie--version == $version)
+        {block}
+    else
+      if ($is-ie--version <= $version)
+        {block}

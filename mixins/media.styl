@@ -1,0 +1,40 @@
+//
+// MEDIA WIDTHS
+// ============
+//
+
+
+// Alias `media()` to most commonly used `media-min()`
+media($width)
+  +media-min($width)
+    {block}
+
+// Target viewports *wider* than supplied width
+media-min($width)
+  if ($is-ie == true)
+    if ($is-ie--media-width >= $width)
+      {block}
+  else
+    $mq = "screen and (min-width: " + em($width, 16) + ")"
+    @media $mq
+      {block}
+
+// Target viewports *narrower* than supplied width
+media-max($width)
+  if ($is-ie == true)
+    if ($is-ie--media-width <= $width)
+      {block}
+  else
+    $mq = "screen and (max-width: " + em($width, 16) + ")"
+    @media $mq
+      {block}
+
+// Target viewports *between* supplied widths
+media-min-max($min-width, $max-width)
+  if ($is-ie == true)
+    if ($is-ie--media-width >= $min-width && $is-ie--media-width <= $max-width)
+      {block}
+  else
+    $mq = "screen and (min-width: " + em($min-width, 16) + ") and (max-width: " + em($max-width, 16) + ")"
+    @media $mq
+      {block}

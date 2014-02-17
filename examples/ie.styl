@@ -1,0 +1,42 @@
+//
+// INTERNET EXPLORER
+// =================
+// Adds code specifically to IE stylesheets based on target version number.
+// By default, it targets the specified version *and below*. A second
+// parameter can be passed to target the specified version only.
+//
+
+
+//
+// EXAMPLE 1:
+// Will be output for *IE8 and below*.
+//
+
+.class
+  background-color rgba(0, 0, 0, 0.5)
+  +ie(8)
+    background-color #000
+
++ie(8)
+  .class
+    background-color #000
+
+//
+// EXAMPLE 2:
+// Will be output for *IE8 only*, and *IE7 only* respectively.
+//
+
+.class
+  opacity 0.5
+  +ie(8, true)
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  +ie(7, true)
+    filter: alpha(opacity=50);
+
+//
+// To work correctly, all IE specific stylesheets will need to contain
+// the following variables:
+//
+
+$is-ie = true
+$is-ie--version = 7 // set desired version number
