@@ -1,0 +1,13 @@
+//
+// ELLIPSIS
+// ========
+// Ellipsis with wrapping disabled by default.
+// https://github.com/visionmedia/nib/blob/master/lib/nib/text/ellipsis.styl
+//
+
+
+ellipsis(no-wrap = true)
+  if no-wrap
+    white-space nowrap
+  overflow hidden
+  text-overflow ellipsis

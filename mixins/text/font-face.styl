@@ -1,0 +1,25 @@
+//
+// FONT FACE
+// =========
+// Easy setup of @font-face declaration by passing a font name and file path.
+// Optionally specify a default weight or style.
+//
+// Note: $filepath shouldn’t contain a filetype extension.
+//
+// Uses the 'Bulletproof Syntax': http://www.fontspring.com/blog/further-hardening-of-the-bulletproof-syntax
+
+font-face($name, $filepath, $weight = 'normal', $style = 'normal')
+
+  $name = '"' + $name + '"'
+  $url-fallback = 'url("' + $filepath + '.eot")'
+  $url  = 'url("' + $filepath + '.eot?#iefix") format("embedded-opentype"), '
+  $url += 'url("' + $filepath + '.woff") format("woff"), '
+  $url += 'url("' + $filepath + '.ttf") format("truetype"), '
+  $url += 'url("' + $filepath + '.svg#svg' + $name + '") format("svg")'
+
+  @font-face
+    font-family unquote($name)
+    src unquote($url-fallback)
+    src unquote($url)
+    font-weight unquote($weight)
+    font-style unquote($style)

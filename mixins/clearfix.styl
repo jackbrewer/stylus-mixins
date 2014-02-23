@@ -1,0 +1,17 @@
+//
+// CLEARFIX
+// ========
+// http://nicolasgallagher.com/micro-clearfix-hack/
+//
+
+
+clearfix()
+  &:before
+  &:after
+    content ""
+    display table
+  &:after
+    clear both
+
+  +ie(7, true)
+    zoom 1
