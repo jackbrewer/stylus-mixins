@@ -1,0 +1,33 @@
+// @it should show minimal microclearfix
+.class
+  clearfix()
+
+// @expect
+.class:after,
+.class:before {
+  content: "";
+  display: table;
+}
+.class:after {
+  clear: both;
+}
+
+// @it should show ie7 microclearfix
+$is-ie = true
+$is-ie--version = 7
+
+.class
+  clearfix()
+
+// @expect
+.class {
+  zoom: 1;
+}
+.class:after,
+.class:before {
+  content: "";
+  display: table;
+}
+.class:after {
+  clear: both;
+}

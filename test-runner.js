@@ -7,7 +7,7 @@ var testRunnerConfig = {
   describe: 'Mixins',
   stylus: {
     use: require('./index')(),
-    import: 'mixins/unit-mixins'
+    import: 'mixins/mixins'
   }
 }
 

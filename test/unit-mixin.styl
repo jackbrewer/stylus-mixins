@@ -2,7 +2,7 @@
 $baseFontSize = 16px
 
 .foo
-  width em(16)
+  width em(16) // 16/16 = 1
 
 // @expect
 .foo {
@@ -11,9 +11,18 @@ $baseFontSize = 16px
 
 // @it should convert unit into em value with font size parameter
 .foo
-  width em(16, 32)
+  width em(16, 32) // 16/32 = 0.5
 
 // @expect
 .foo {
   width: 0.5em;
+}
+
+// @it should return percentage based on two values
+.foo
+  width ratio-percentage(1,2) // 1/2 = 0.5 = 50%
+
+// @expect
+.foo {
+  width: 50%;
 }
