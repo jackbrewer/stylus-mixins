@@ -1,0 +1,185 @@
+// @it description needed
+.class
+  +no-media('height', 'min', 100, 200)
+    background-color #fec0ff
+
+// @expect
+
+// @it description needed
+$width--fixed-min = 101
+
+.class
+  +no-media('width', 'min', 100, 200)
+    background-color #fec0ff
+
+// @expect
+.class {
+  background-color: #fec0ff;
+}
+
+// @it description needed
+$width--fixed-min = 99
+
+.class
+  +no-media('width', 'min', 100, 200)
+    background-color #fec0ff
+
+// @expect
+
+
+// @it description needed
+$width--fixed-max = 99
+
+.class
+  +no-media('width', 'max', 100, 200)
+    background-color #fec0ff
+
+// @expect
+.class {
+  background-color: #fec0ff;
+}
+
+// @it description needed
+$width--fixed-max = 101
+
+.class
+  +no-media('width', 'max', 100, 200)
+    background-color #fec0ff
+
+// @expect
+
+// @it description needed
+$width--fixed-min = 101
+$width--fixed-max = 199
+
+.class
+  +no-media('width', 'range', 100, 200)
+    background-color #fec0ff
+
+// @expect
+.class {
+  background-color: #fec0ff;
+}
+
+// @it description needed
+$width--fixed-min = 99
+$width--fixed-max = 199
+
+.class
+  +no-media('width', 'range', 100, 200)
+    background-color #fec0ff
+
+// @expect
+
+// @it description needed
+$width--fixed-min = 101
+$width--fixed-max = 201
+
+.class
+  +no-media('width', 'range', 100, 200)
+    background-color #fec0ff
+
+// @expect
+
+// @it description needed
+$width--fixed-min = 99
+$width--fixed-max = 201
+
+.class
+  +no-media('width', 'range', 100, 200)
+    background-color #fec0ff
+
+// @expect
+
+
+// @it description needed
+$no-mq = true
+.class
+  +media('width', 'min', 100)
+    background-color #fec0ff
+
+// @expect
+
+// @it description needed
+.class
+  +media('width', 'min', 100)
+    background-color #fec0ff
+
+// @expect
+@media screen and (min-width: 6.25em) {
+  .class {
+    background-color: #fec0ff;
+  }
+}
+
+// @it description needed
+.class
+  +media('width', 'max', 100)
+    background-color #fec0ff
+
+// @expect
+@media screen and (max-width: 6.1875em) {
+  .class {
+    background-color: #fec0ff;
+  }
+}
+
+// @it description needed
+.class
+  +media('width', 'max', 100)
+    background-color #fec0ff
+
+// @expect
+@media screen and (max-width: 6.1875em) {
+  .class {
+    background-color: #fec0ff;
+  }
+}
+
+// @it description needed
+.class
+  +media('width', 'range', 100, 200)
+    background-color #fec0ff
+
+// @expect
+@media screen and (min-width: 6.25em) and (max-width: 12.4375em) {
+  .class {
+    background-color: #fec0ff;
+  }
+}
+
+// @it description needed
+.class
+  +width-min(100)
+    background-color #fec0ff
+
+// @expect
+@media screen and (min-width: 6.25em) {
+  .class {
+    background-color: #fec0ff;
+  }
+}
+
+// @it description needed
+.class
+  +width-max(100)
+    background-color #fec0ff
+
+// @expect
+@media screen and (max-width: 6.1875em) {
+  .class {
+    background-color: #fec0ff;
+  }
+}
+
+// @it description needed
+.class
+  +width-range(100, 200)
+    background-color #fec0ff
+
+// @expect
+@media screen and (min-width: 6.25em) and (max-width: 12.4375em) {
+  .class {
+    background-color: #fec0ff;
+  }
+}

@@ -9,10 +9,7 @@
 
 media-hidpi($ratio = 1.3)
 
-  $mq =  '(-webkit-min-device-pixel-ratio: ' + $ratio + '), '
-  $mq += '(min-resolution: ' + floor($ratio * 96) + 'dpi), '
+  $mq = '(-webkit-min-device-pixel-ratio: ' + $ratio + '), (min-resolution: ' + floor($ratio * 96) + 'dpi)'
 
   @media $mq
     {block}
-
-
