@@ -1,20 +1,11 @@
 {
   "name": "stylus-mixins",
   "version": "0.0.1",
-  "description": "Stylus Mixins",
-  "keywords": [
-    "Stylus",
-    "CSS",
-    "syntax",
-    "shorthand",
-    "clockhand",
-    "utility"
-  ],
+  "description": "A collection of useful Stylus mixins",
+  "main": "lib/stylus-mixins.js",
+  "author": "Jack Brewer",
   "repository": {
-    "type": "",
-    "url": ""
-  },
-  "main": "index.js",
-  "author": "",
-  "license": "MIT"
+    "type": "git",
+    "url": "git://github.com:jackbrewer/stylus-mixins.git"
+  }
 }
