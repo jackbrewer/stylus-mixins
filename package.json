@@ -1,7 +1,7 @@
 {
   "name": "stylus-mixins",
   "version": "0.0.1",
-  "description": "Stylus mixins",
+  "description": "Stylus Mixins",
   "keywords": [
     "Stylus",
     "CSS",
@@ -13,13 +13,6 @@
   "repository": {
     "type": "",
     "url": ""
-  },
-  "main": "index.js",
-  "scripts": {
-    "test": "make test"
-  },
-  "devDependencies": {
-    "stylus-test-runner": "git://github.com/timjgleeson/stylus-test-runner.git"
   },
   "author": "",
   "license": "MIT"
