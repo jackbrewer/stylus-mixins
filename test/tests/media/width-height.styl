@@ -1,0 +1,119 @@
+// @it width-min(int) should output content in a media query with a minimum width
+.class
+  +width-min(100)
+    background-color #fec0ff
++width-min(100)
+  .class
+    background-color #fec0ff
+
+// @expect
+@media screen and (min-width: 6.25em) {
+  .class {
+    background-color: #fec0ff;
+  }
+}
+@media screen and (min-width: 6.25em) {
+  .class {
+    background-color: #fec0ff;
+  }
+}
+
+// @it width-max(int) should output content in a media query with a maximum width
+.class
+  +width-max(100)
+    background-color #fec0ff
++width-max(100)
+  .class
+    background-color #fec0ff
+
+// @expect
+@media screen and (max-width: 6.1875em) {
+  .class {
+    background-color: #fec0ff;
+  }
+}
+@media screen and (max-width: 6.1875em) {
+  .class {
+    background-color: #fec0ff;
+  }
+}
+
+// @it width-range(int, int) should output content in a media query with a minimum and maximum width
+.class
+  +width-range(100, 200)
+    background-color #fec0ff
++width-range(100, 200)
+  .class
+    background-color #fec0ff
+
+// @expect
+@media screen and (min-width: 6.25em) and (max-width: 12.4375em) {
+  .class {
+    background-color: #fec0ff;
+  }
+}
+@media screen and (min-width: 6.25em) and (max-width: 12.4375em) {
+  .class {
+    background-color: #fec0ff;
+  }
+}
+
+// @it height-min(int) should output content in a media query with a minimum height
+.class
+  +height-min(100)
+    background-color #fec0ff
++height-min(100)
+  .class
+    background-color #fec0ff
+
+// @expect
+@media screen and (min-height: 6.25em) {
+  .class {
+    background-color: #fec0ff;
+  }
+}
+@media screen and (min-height: 6.25em) {
+  .class {
+    background-color: #fec0ff;
+  }
+}
+
+// @it height-max(int) should output content in a media query with a maximum height
+.class
+  +height-max(100)
+    background-color #fec0ff
++height-max(100)
+  .class
+    background-color #fec0ff
+
+// @expect
+@media screen and (max-height: 6.1875em) {
+  .class {
+    background-color: #fec0ff;
+  }
+}
+@media screen and (max-height: 6.1875em) {
+  .class {
+    background-color: #fec0ff;
+  }
+}
+
+// @it height-range(int, int) should output content in a media query with a minimum and maximum height
+.class
+  +height-range(100, 200)
+    background-color #fec0ff
++height-range(100, 200)
+  .class
+    background-color #fec0ff
+
+// @expect
+@media screen and (min-height: 6.25em) and (max-height: 12.4375em) {
+  .class {
+    background-color: #fec0ff;
+  }
+}
+@media screen and (min-height: 6.25em) and (max-height: 12.4375em) {
+  .class {
+    background-color: #fec0ff;
+  }
+}

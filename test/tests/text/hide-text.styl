@@ -1,0 +1,10 @@
+// @it hide-text() should add styles to allow text to be hidden using text indent
+.class
+  hide-text()
+
+// @expect
+.class {
+  text-indent: 110%;
+  white-space: nowrap;
+  overflow: hidden;
+}

@@ -1,0 +1,23 @@
+// @it font-face(name, path) should output based on a Typeface nemae and filepath
+font-face('FontName', '/fonts/font-name')
+
+// @expect
+@font-face {
+  font-family: "FontName";
+  src: url("/fonts/font-name.eot");
+  src: url("/fonts/font-name.eot?#iefix") format("embedded-opentype"), url("/fonts/font-name.woff") format("woff"), url("/fonts/font-name.ttf") format("truetype"), url("/fonts/font-name.svg#svgFontName") format("svg");
+  font-weight: 400;
+  font-style: normal;
+}
+
+// @it font-face(name, path, weight, style) should accept optional weight and style parameters
+font-face('FontName', '/fonts/font-name', bold, italic)
+
+// @expect
+@font-face {
+  font-family: "FontName";
+  src: url("/fonts/font-name.eot");
+  src: url("/fonts/font-name.eot?#iefix") format("embedded-opentype"), url("/fonts/font-name.woff") format("woff"), url("/fonts/font-name.ttf") format("truetype"), url("/fonts/font-name.svg#svgFontName") format("svg");
+  font-weight: bold;
+  font-style: italic;
+}

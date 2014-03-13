@@ -7,5 +7,11 @@
   "repository": {
     "type": "git",
     "url": "git://github.com:jackbrewer/stylus-mixins.git"
+  },
+  "scripts": {
+    "test": "node test/test-runner.js"
+  },
+  "devDependencies": {
+    "stylus-test-runner": "git://github.com/timjgleeson/stylus-test-runner.git"
   }
 }

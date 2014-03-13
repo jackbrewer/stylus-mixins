@@ -1,0 +1,20 @@
+// @it ellipsis() should add styles to allow for text to overflow without wrapping
+.class
+  ellipsis()
+
+// @expect
+.class {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// @it ellipsis(false) should add styles to allow for text to overflow and wrap
+.class
+  ellipsis(false)
+
+// @expect
+.class {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

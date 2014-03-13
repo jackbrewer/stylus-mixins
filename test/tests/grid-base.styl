@@ -1,0 +1,36 @@
+// @it grid-widths('', int [int]) should output unprefixed grid width classes
+$col-size-names = whole half third quarter fifth sixth seventh eighth ninth tenth eleventh twelfth
+$col-count-names = one two three four five six seven eight nine ten eleven twelve
+
+grid-widths('', 1)
+grid-widths('', 1 2)
+
+// @expect
+.one-whole {
+  width: 100%;
+}
+.one-whole {
+  width: 100%;
+}
+.one-half {
+  width: 50%;
+}
+
+
+// @it grid-widths(namespace, int [int]) should output namespace prefixed grid width classes
+$col-size-names = whole half third quarter fifth sixth seventh eighth ninth tenth eleventh twelfth
+$col-count-names = one two three four five six seven eight nine ten eleven twelve
+
+grid-widths('lap-', 1)
+grid-widths('desk-', 1 2)
+
+// @expect
+.lap-one-whole {
+  width: 100%;
+}
+.desk-one-whole {
+  width: 100%;
+}
+.desk-one-half {
+  width: 50%;
+}

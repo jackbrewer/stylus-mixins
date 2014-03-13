@@ -1,0 +1,33 @@
+// @it clearfix() should output a clearfix styles to an element
+.class
+  clearfix()
+
+// @expect
+.class:after,
+.class:before {
+  content: "";
+  display: table;
+}
+.class:after {
+  clear: both;
+}
+
+// @it clearfix() should output a clearfix styles to an element with IE7 content if $is-ie--version == 7
+$is-ie = true
+$is-ie--version = 7
+
+.class
+  clearfix()
+
+// @expect
+.class {
+  zoom: 1;
+}
+.class:after,
+.class:before {
+  content: "";
+  display: table;
+}
+.class:after {
+  clear: both;
+}

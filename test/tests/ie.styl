@@ -1,0 +1,68 @@
+// @it ie() should not output IE styles to non-IE stylesheets
+.class
+  background-color rgba(0, 0, 0, 0.5)
+  +ie(8)
+    background-color #000
+
+// @expect
+.class {
+  background-color: rgba(0,0,0,.5);
+}
+
+// @it ie(version) should add extra content if IE version matches $is-ie--version
+$is-ie = true
+$is-ie--version = 8
+
+.class
+  background-color rgba(0, 0, 0, 0.5)
+  +ie(8)
+    background-color #000
+
+// @expect
+.class {
+  background-color: rgba(0,0,0,.5);
+  background-color: #000;
+}
+
+// @it ie(version) should add extra content if IE version is lower than $is-ie--version
+$is-ie = true
+$is-ie--version = 7
+
+.class
+  background-color rgba(0, 0, 0, 0.5)
+  +ie(8)
+    background-color #000
+
+// @expect
+.class {
+  background-color: rgba(0,0,0,.5);
+  background-color: #000;
+}
+
+// @it ie(version, true) should not add extra content if IE version is lower than $is-ie--version and extra parameter is passed
+$is-ie = true
+$is-ie--version = 7
+
+.class
+  background-color rgba(0, 0, 0, 0.5)
+  +ie(8, true)
+    background-color #000
+
+// @expect
+.class {
+  background-color: rgba(0,0,0,.5);
+}
+
+// @it ie(version) should not add extra content if IE version is greater than $is-ie--version
+$is-ie = true
+$is-ie--version = 8
+
+.class
+  background-color rgba(0, 0, 0, 0.5)
+  +ie(7)
+    background-color #000
+
+// @expect
+.class {
+  background-color: rgba(0,0,0,.5);
+}
