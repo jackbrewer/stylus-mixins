@@ -9,15 +9,15 @@
 //
 
 width-min($a)
-  +media('width', 'min', media-keyword('width', $a))
+  +_media('width', 'min', _media-keyword('width', $a))
     {block}
 
 width-max($a)
-  +media('width', 'max', media-keyword('width', $a))
+  +_media('width', 'max', _media-keyword('width', $a))
     {block}
 
 width-range($a, $b)
-  +media('width', 'range', media-keyword('width', $a), media-keyword('width', $b))
+  +_media('width', 'range', _media-keyword('width', $a), _media-keyword('width', $b))
     {block}
 
 
@@ -26,28 +26,29 @@ width-range($a, $b)
 //
 
 height-min($a)
-  +media('height', 'min', media-keyword('height', $a))
+  +_media('height', 'min', _media-keyword('height', $a))
     {block}
 
 height-max($a)
-  +media('height', 'max', media-keyword('height', $a))
+  +_media('height', 'max', _media-keyword('height', $a))
     {block}
 
 height-range($a, $b)
-  +media('height', 'range', media-keyword('height', $a), media-keyword('height', $b))
+  +_media('height', 'range', _media-keyword('height', $a), _media-keyword('height', $b))
     {block}
 
 
 
 //
 // MEDIA QUERY BUILDER
+// This mixin should not be called directly
 //
 
-media($direction, $type, $a, $b = false)
+_media($direction, $type, $a, $b = false)
 
   if ($no-mq == true)
 
-    +no-media($direction, $type, $a, $b)
+    +_no-media($direction, $type, $a, $b)
       {block}
 
   else
@@ -66,9 +67,10 @@ media($direction, $type, $a, $b = false)
 
 //
 // NO-MEDIA QUERY BUILDER
+// This mixin should not be called directly
 //
 
-no-media($direction, $type, $a, $b)
+_no-media($direction, $type, $a, $b)
 
   if ($direction == 'width')
     if ($type == 'min')
@@ -92,7 +94,7 @@ no-media($direction, $type, $a, $b)
 // Converts passed keywords to values from variables if they exist
 //
 
-media-keyword($direction, $unit)
+_media-keyword($direction, $unit)
 
   if (typeof($unit) == 'unit')
     // Already a unit
