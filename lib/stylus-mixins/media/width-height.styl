@@ -9,15 +9,15 @@
 //
 
 width-min($a)
-  +_media('width', 'min', _media-keyword('width', $a))
+  +_media('width', 'min', $a)
     {block}
 
 width-max($a)
-  +_media('width', 'max', _media-keyword('width', $a))
+  +_media('width', 'max', $a)
     {block}
 
 width-range($a, $b)
-  +_media('width', 'range', _media-keyword('width', $a), _media-keyword('width', $b))
+  +_media('width', 'range', $a, $b)
     {block}
 
 
@@ -26,17 +26,16 @@ width-range($a, $b)
 //
 
 height-min($a)
-  +_media('height', 'min', _media-keyword('height', $a))
+  +_media('height', 'min', $a)
     {block}
 
 height-max($a)
-  +_media('height', 'max', _media-keyword('height', $a))
+  +_media('height', 'max', $a)
     {block}
 
 height-range($a, $b)
-  +_media('height', 'range', _media-keyword('height', $a), _media-keyword('height', $b))
+  +_media('height', 'range', $a, $b)
     {block}
-
 
 
 //
@@ -54,12 +53,10 @@ _media($direction, $type, $a, $b = false)
   else
 
     $mq = ''
-    if ($type == 'min')
-      $mq = 'screen and (min-' + $direction + ': ' + em($a, 16) + ')'
-    if ($type == 'max')
-      $mq = 'screen and (max-' + $direction + ': ' + em($a - 1, 16) + ')'
+    if ($type == 'min' || $type == 'max')
+      $mq = 'screen and (' + $type + '-' + $direction + ': ' + $a + ')'
     if ($type == 'range')
-      $mq = 'screen and (min-' + $direction + ': ' + em($a, 16) + ') and (max-' + $direction + ': ' + em($b - 1, 16) + ')'
+      $mq = 'screen and (min-' + $direction + ': ' + $a + ') and (max-' + $direction + ': ' + $b + ')'
 
     @media $mq
       {block}
@@ -77,54 +74,11 @@ _no-media($direction, $type, $a, $b)
       if ($width--fixed-min >= $a)
         {block}
     else if ($type == 'max')
-      if ($width--fixed-max - 1 < $a)
+      if ($width--fixed-max < $a)
         {block}
     else if ($type == 'range')
-      if ($width--fixed-min >= $a && $width--fixed-max - 1 < $b)
+      if ($width--fixed-min >= $a && $width--fixed-max < $b)
         {block}
 
   else if ($direction == 'height')
     // No defaults set for height
-
-
-
-
-//
-// KEYWORD HELPER
-// Converts passed keywords to values from variables if they exist
-//
-
-_media-keyword($direction, $unit)
-
-  if (typeof($unit) == 'unit')
-    // Already a unit
-    $unit
-
-  else if ($direction == 'width')
-
-    if ($unit == 'mobile')
-      $width--mobile
-    else if ($unit == 'mobile--portrait')
-      $width--mobile--portrait
-    else if ($unit == 'mobile--landscape')
-      $width--mobile--landscape
-
-    else if ($unit == 'tablet')
-      $width--tablet
-    else if ($unit == 'tablet--portrait')
-      $width--tablet--portrait
-    else if ($unit == 'tablet--landscape')
-      $width--tablet--landscape
-
-    else if ($unit == 'desktop')
-      $width--desktop
-    else if ($unit == 'desktop--small')
-      $width--desktop--small
-    else if ($unit == 'desktop--medium')
-      $width--desktop--medium
-    else if ($unit == 'desktop--large')
-      $width--desktop--large
-
-  else if ($direction == 'height')
-    // No defined height variables to check
-    $unit
