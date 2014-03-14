@@ -4,66 +4,105 @@
 // TODO: Add documentation for usage
 //
 
-_grid($namespace, $columns, $property)
-  for $column, $i in $columns
-    $grid = $col-size-names[$column - 1]
-    if ($column - 1 > 0)
-      // Loop trough col size names
-      for $size, $j in $col-count-names
-        // Check if we need this size
-        if $j < ($column - 1)
-          $plural = $j is 0 ? '' : 's'
-          .{$namespace}{$size}-{$grid[0]}{$plural}
-            {$property} ($j+1) * (100% / $column)
-          if $property == 'width'
-            .{$namespace}{$col-count-names[0]}-{$grid[0]}
-              ie(7, ieWidth, ($j+1) * (100 / $column))
-    else
-      .{$namespace}{$col-count-names[0]}-{$grid[0]}
-        {$property} 100%
-      if $property == 'width'
-        .{$namespace}{$col-count-names[0]}-{$grid[0]}
-          ie(7, ieWidth, 100)
+//
+// DEFAULT SETTINGS
+//
+
+$grid--gutter = 20px
+$grid--count-names = one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen
+$grid--size-names = whole half third quarter fifth sixth seventh eighth ninth tenth eleventh twelfth thirteenth fourteenth fifteenth sixteenth
+
+
+//
+// GRID WIDTHS
+// The base mixin, used to set up grid width styles.
+//
 
 grid-widths()
   $namespace = arguments[0]
   $columns = arguments[1]
   _grid($namespace, $columns, 'width')
 
-grid-pull()
-  $namespace = arguments[0]
-  $columns = arguments[1]
-  _grid($namespace, $columns, 'right')
+
+//
+// GRID PUSH/PULL
+// Modifies the position of grid items by pushing/pulling them by column width values
+//
 
 grid-push()
   $namespace = arguments[0]
   $columns = arguments[1]
   _grid($namespace, $columns, 'left')
 
-grid-modifiers($namespace='')
-  // Gutterless grid
-  .{$namespace}grid--full
-    margin-left 0
-    > .grid__item
-      padding-left 0
+grid-pull()
+  $namespace = arguments[0]
+  $columns = arguments[1]
+  _grid($namespace, $columns, 'right')
 
-  // Reverses the rendered layout of the 'grid__item's
-  .{$namespace}grid--rev
+
+//
+// GRID MODIFIERS
+//
+
+// GRID REVERSE
+// Reverses the rendered layout of the `grid__item`s
+grid-reverse($namespace='')
+  .{$namespace}grid--reverse
     direction rtl
     text-align right
     > .grid__item
       direction ltr
       text-align left
-      ielte(7, ielte7-rev-grid-item)
 
-  // Create grids with narrower gutters
+// GRID FULL
+// Gutterless grid items
+grid-full($nmespace='')
+  .{$namespace}grid--full
+    margin-left 0
+    > .grid__item
+      padding-left 0
+
+// GRID NARROW
+// Create grids with narrower gutters
+grid-narrow($namespace='')
   .{$namespace}grid--narrow
-    margin-left - ($gutter / 2)
+    margin-left - ($grid--gutter / 2)
     > .grid__item
-      padding-left ($gutter / 2)
+      padding-left ($grid--gutter / 2)
 
-  // Create grids with wider gutters
+// GRID NARROW
+// Create grids with wider gutters
+grid-wide($namespace='')
   .{$namespace}grid--wide
-    margin-left - ($gutter * 2)
+    margin-left - ($grid--gutter * 2)
     > .grid__item
-      padding-left ($gutter * 2)
+      padding-left ($grid--gutter * 2)
+
+// FULL MODIFIER SUITE
+// Include all modifiers (recommended for prototyping rather than production)
+grid-modifiers($namespace='')
+  grid-reverse($namespace)
+  grid-full($namespace)
+  grid-narrow($namespace)
+  grid-wide($namespace)
+
+
+//
+// GRID WIDTHS BUILDER
+// This mixin should not be called directly
+//
+
+_grid($namespace, $columns, $property)
+  for $column, $i in $columns
+    $grid = $grid--size-names[$column - 1]
+    if ($column - 1 > 0)
+      // Loop trough col size names
+      for $size, $j in $grid--count-names
+        // Check if we need this size
+        if $j < ($column - 1)
+          $plural = $j is 0 ? '' : 's'
+          .{$namespace}{$size}-{$grid[0]}{$plural}
+            {$property} ($j+1) * (100% / $column)
+    else
+      .{$namespace}{$grid--count-names[0]}-{$grid[0]}
+        {$property} 100%

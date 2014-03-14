@@ -1,9 +1,8 @@
-// @it grid-widths('', int [int]) should output unprefixed grid width classes
-$col-size-names = whole half third quarter fifth sixth seventh eighth ninth tenth eleventh twelfth
-$col-count-names = one two three four five six seven eight nine ten eleven twelve
-
+// @it grid-widths(namespace, int [int,]) should output (optionally namespace-prefixed) grid width classes in specified widths
 grid-widths('', 1)
 grid-widths('', 1 2)
+grid-widths('lap-', 1)
+grid-widths('desk-', 1 2)
 
 // @expect
 .one-whole {
@@ -15,16 +14,6 @@ grid-widths('', 1 2)
 .one-half {
   width: 50%;
 }
-
-
-// @it grid-widths(namespace, int [int]) should output namespace prefixed grid width classes
-$col-size-names = whole half third quarter fifth sixth seventh eighth ninth tenth eleventh twelfth
-$col-count-names = one two three four five six seven eight nine ten eleven twelve
-
-grid-widths('lap-', 1)
-grid-widths('desk-', 1 2)
-
-// @expect
 .lap-one-whole {
   width: 100%;
 }
@@ -33,4 +22,88 @@ grid-widths('desk-', 1 2)
 }
 .desk-one-half {
   width: 50%;
+}
+
+
+// @it grid-reverse(namespace) should output (optionally namespace-prefixed) styles to reverse the direction of grid items
+grid-reverse()
+grid-reverse('desk-')
+
+// @expect
+.grid--reverse {
+  direction: rtl;
+  text-align: right;
+}
+.grid--reverse > .grid__item {
+  direction: ltr;
+  text-align: left;
+}
+.desk-grid--reverse {
+  direction: rtl;
+  text-align: right;
+}
+.desk-grid--reverse > .grid__item {
+  direction: ltr;
+  text-align: left;
+}
+
+
+// @it grid-narrow(namespace) should output (optionally namespace-prefixed) styles to halve gutter width
+grid-narrow()
+grid-narrow('desk-')
+
+// @expect
+.grid--narrow {
+  margin-left: -10px;
+}
+.grid--narrow > .grid__item {
+  padding-left: 10px;
+}
+.desk-grid--narrow {
+  margin-left: -10px;
+}
+.desk-grid--narrow > .grid__item {
+  padding-left: 10px;
+}
+
+// @it grid-narrow(namespace) Should accept $grid--gutter values other than the default
+$grid--gutter = 1em
+grid-narrow()
+
+// @expect
+.grid--narrow {
+  margin-left: -0.5em;
+}
+.grid--narrow > .grid__item {
+  padding-left: 0.5em;
+}
+
+// @it grid-wide(namespace) should output (optionally namespace-prefixed) styles to double gutter width
+grid-wide()
+grid-wide('desk-')
+
+// @expect
+.grid--wide {
+  margin-left: -40px;
+}
+.grid--wide > .grid__item {
+  padding-left: 40px;
+}
+.desk-grid--wide {
+  margin-left: -40px;
+}
+.desk-grid--wide > .grid__item {
+  padding-left: 40px;
+}
+
+// @it grid-wide(namespace) Should accept $grid--gutter values other than the default
+$grid--gutter = 2%
+grid-wide()
+
+// @expect
+.grid--wide {
+  margin-left: -4%;
+}
+.grid--wide > .grid__item {
+  padding-left: 4%;
 }
