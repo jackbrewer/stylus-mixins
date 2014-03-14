@@ -6,9 +6,12 @@ A collection of Stylus mixins which can be used in conjunction with [Stylus Auto
 
 Currently in an early stage, but with grand plans for the future.
 
+## Mixins
+
+Documentation is still to be written. Mixins can currently be browsed in the `lib/stylus-mixins` folder. The test directory can temporarily act as a reference for mixin usage.
+
 ## Coming Soon
 
 * More mixins
 * List of existing mixins with usage details
-* Stylus Tests (currently in development)
-
+* More tests (currently estimated ~95% code coverage)
