@@ -51,7 +51,6 @@ height-range($a, $b)
 _media($direction, $type, $a, $b = false)
 
   if ($no-mq == true)
-
     +_no-media($direction, $type, $a, $b)
       {block}
 
@@ -73,16 +72,15 @@ _media($direction, $type, $a, $b = false)
 //
 
 _no-media($direction, $type, $a, $b)
-
   if ($direction == 'width')
     if ($type == 'min')
       if ($width--fixed-min >= $a)
         {block}
     else if ($type == 'max')
-      if ($width--fixed-max < $a)
+      if ($width--fixed-max <= $a)
         {block}
     else if ($type == 'range')
-      if ($width--fixed-min >= $a && $width--fixed-max < $b)
+      if ($width--fixed-min >= $a && $width--fixed-max <= $b)
         {block}
 
   else if ($direction == 'height')
