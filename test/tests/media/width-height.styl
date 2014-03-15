@@ -117,3 +117,109 @@
     background-color: #fec0ff;
   }
 }
+
+
+// @it width-min(int) should output without media queries if $no-mq is true, and `int` is within the fixed bounds.
++width-min(960px)
+  .class
+    background-color #fec0ff
+$no-mq = true
+$width--fixed-min = 960px
+// Within bounds: $width--fixed-min is larger than 959px
++width-min(959px)
+  .class1
+    background-color #bada55
+// Within bounds: $width--fixed-min is equal to 960px
++width-min(960px)
+  .class2
+    background-color #c0ffee
+// Out of bounds: $width--fixed-min is smaller than 961px
++width-min(961px)
+  .class3
+    background-color #fec0ff
+
+// @expect
+@media screen and (min-width: 960px) {
+  .class {
+    background-color: #fec0ff;
+  }
+}
+.class1 {
+  background-color: #bada55;
+}
+.class2 {
+  background-color: #c0ffee;
+}
+
+// @it width-max(int) should output without media queries if $no-mq is true, and `int` is within the fixed bounds.
++width-max(1200px)
+  .class
+    background-color #fec0ff
+$no-mq = true
+$width--fixed-max = 1200px
+// Within bounds: $width--fixed-max is smaller than 1201px
++width-max(1201px)
+  .class1
+    background-color #fec0ff
+// Within bounds: $width--fixed-max is equal to 1200px
++width-max(1200px)
+  .class2
+    background-color #c0ffee
+// Out of bounds: $width--fixed-max larger than 1199px
++width-max(1199px)
+  .class3
+    background-color #bada55
+
+// @expect
+@media screen and (max-width: 1200px) {
+  .class {
+    background-color: #fec0ff;
+  }
+}
+.class1 {
+  background-color: #fec0ff;
+}
+.class2 {
+  background-color: #c0ffee;
+}
+
+// @it width-range(a, b) should output without media queries if $no-mq is true, and `a` and `b` are within the fixed bounds.
++width-range(960px, 1200px)
+  .class
+    background-color #fec0ff
+$no-mq = true
+$width--fixed-min = 960px
+$width--fixed-max = 1200px
+// Within bounds: $width--fixed-min is larger than 959px and $width--fixed-max is smaller than 1201px
++width-range(959px, 1201px)
+  .class1
+    background-color #bada55
+// Within bounds: $width--fixed-min is equal to 960px and $width--fixed-max is equal to 1200px
++width-range(960px, 1200px)
+  .class2
+    background-color #c0ffee
+// Out of bounds: $width--fixed-min is smaller than 961px
++width-range(961px, 1200px)
+  .class3
+    background-color #fec0ff
+// Out of bounds: $width--fixed-max is larger than 1199px
++width-range(960px, 1199px)
+  .class4
+    background-color #fec0ff
+// Out of bounds: $width--fixed-min is smaller than 961px and $width--fixed-max is larger than 1199px
++width-range(961px, 1199px)
+  .class5
+    background-color #fec0ff
+
+// @expect
+@media screen and (min-width: 960px) and (max-width: 1200px) {
+  .class {
+    background-color: #fec0ff;
+  }
+}
+.class1 {
+  background-color: #bada55;
+}
+.class2 {
+  background-color: #c0ffee;
+}
