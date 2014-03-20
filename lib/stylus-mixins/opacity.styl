@@ -1,0 +1,23 @@
+//
+// OPACITY
+// =======
+// Transparent opacity mixin with conditional IE support.
+// A modified version of https://github.com/visionmedia/nib/blob/master/lib/nib/vendor.styl
+//
+
+$is-ie ?= false
+
+opacity(n, args...)
+  opacity: n args
+  if $is-ie
+    val = round(n * 100)
+    if val == 100
+      +ie(8, true)
+        -ms-filter: none
+      +ie(7)
+        filter: none
+    else
+      +ie(8, true)
+        -ms-filter: '"alpha(opacity=%s)"' % val args
+      +ie(7)
+        filter: 'alpha(opacity=%s)' % val args
