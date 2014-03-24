@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/jackbrewer/stylus-mixins.png?branch=master)](https://travis-ci.org/jackbrewer/stylus-mixins)
+[![Build Status](https://travis-ci.org/timjgleeson/stylus-mixins.png?branch=master)](https://travis-ci.org/timjgleeson/stylus-mixins)
 
 # Stylus Mixins
 
