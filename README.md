@@ -10,6 +10,10 @@ Currently in an early stage, but with grand plans for the future.
 
 Documentation is still to be written. Mixins can currently be browsed in the `lib/stylus-mixins` folder. The test directory can temporarily act as a reference for mixin usage.
 
+## Testing
+
+```node test```
+
 ## Coming Soon
 
 * More mixins
