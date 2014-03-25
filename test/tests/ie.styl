@@ -1,4 +1,6 @@
-// @it ie() should not output IE styles to non-IE stylesheets
+// @describe ie($version, $strict = false)
+
+// @it not output IE styles to non-IE stylesheets
 .class
   background-color rgba(0, 0, 0, 0.5)
   +ie(8)
@@ -9,7 +11,7 @@
   background-color: rgba(0,0,0,.5);
 }
 
-// @it ie(version) should add extra content if IE version matches $is-ie--version
+// @it add extra content if IE version matches $is-ie--version
 $is-ie = true
 $is-ie--version = 8
 
@@ -24,7 +26,7 @@ $is-ie--version = 8
   background-color: #000;
 }
 
-// @it ie(version) should add extra content if IE version is lower than $is-ie--version
+// @it add extra content if IE version is lower than $is-ie--version
 $is-ie = true
 $is-ie--version = 7
 
@@ -39,7 +41,7 @@ $is-ie--version = 7
   background-color: #000;
 }
 
-// @it ie(version, true) should not add extra content if IE version is lower than $is-ie--version and extra parameter is passed
+// @it not add extra content if IE version is lower than $is-ie--version and $strict is true
 $is-ie = true
 $is-ie--version = 7
 
@@ -53,7 +55,7 @@ $is-ie--version = 7
   background-color: rgba(0,0,0,.5);
 }
 
-// @it ie(version) should not add extra content if IE version is greater than $is-ie--version
+// @it not add extra content if IE version is greater than $is-ie--version
 $is-ie = true
 $is-ie--version = 8
 

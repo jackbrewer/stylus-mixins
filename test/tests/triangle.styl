@@ -1,4 +1,6 @@
-// @it triangle() should output a defualt triangle when no parameters are passed
+// @describe triangle(point = up, size = 1em, color = #777)
+
+// @it output a defualt triangle when no parameters are passed
 .triangle
   triangle()
 
@@ -11,8 +13,7 @@
   border-left: 1em solid transparent;
 }
 
-
-// @it triangle() should output in any any of 8 different directions
+// @it output in any any of 8 different directions
 .triangle--up-left
   triangle(up-left)
 .triangle--up
@@ -93,7 +94,7 @@
 }
 
 
-// @it triangle() should output a custom triangle when width and/or color parameters are passed
+// @it output a custom triangle when width and/or color parameters are passed
 .class1
   triangle(right, 6px, #f00)
 .class2
@@ -125,7 +126,7 @@
 }
 
 
-// @it triangle() should output nothing if passed parameters are not the expected type
+// @it output nothing if passed parameters are not the expected type
 .correct
   triangle('right', 3em, #0f0)
 .incorrect-direction

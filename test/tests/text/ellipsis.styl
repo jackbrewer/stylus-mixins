@@ -1,4 +1,6 @@
-// @it ellipsis() should add styles to allow for text to overflow without wrapping
+// @describe ellipsis(no-wrap = true)
+
+// @it default to output overflow hidden, text overflow ellipsis, and whitespace nowrap
 .class
   ellipsis()
 
@@ -9,7 +11,7 @@
   text-overflow: ellipsis;
 }
 
-// @it ellipsis(false) should add styles to allow for text to overflow and wrap
+// @it no-wrap false to output overflow hidden, and text overflow ellipsis
 .class
   ellipsis(false)
 

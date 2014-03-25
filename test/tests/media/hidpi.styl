@@ -1,4 +1,6 @@
-// @it media-hidpi() should have default base ratio of 1.3
+// @describe media-hidpi($ratio = 1.3)
+
+// @it default ratio of 1.3
 .class
   +media-hidpi()
     background-color #fec0ff
@@ -18,7 +20,7 @@
   }
 }
 
-// @it media-hidpi(int) should accept an optional ratio to use
+// @it custom ratio
 .class
   +media-hidpi(2)
     background-color #fec0ff
