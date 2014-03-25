@@ -1,4 +1,6 @@
-// @it font-face(name, path) should output based on a Typeface name and filepath
+// @describe font-face($name, $filepath, $weight = 'normal', $style = 'normal')
+
+// @it default to output fontface with name and filepath
 font-face('FontName', '/fonts/font-name')
 
 // @expect
@@ -10,7 +12,7 @@ font-face('FontName', '/fonts/font-name')
   font-style: normal;
 }
 
-// @it font-face(name, path, weight, style) should accept optional weight and style parameters
+// @it custom weight and style to output fontface with with name, filepath, and optional weight and style parameters
 font-face('FontName', '/fonts/font-name', bold, italic)
 
 // @expect
