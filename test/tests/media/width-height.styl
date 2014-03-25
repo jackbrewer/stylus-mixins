@@ -1,4 +1,6 @@
-// @it width-min(int) should output content in a media query with a minimum width
+// @describe width-min(int)
+
+// @it output content in a media query with a minimum width
 .class
   +width-min(100px)
     background-color #fec0ff
@@ -18,108 +20,7 @@
   }
 }
 
-// @it width-max(int) should output content in a media query with a maximum width
-.class
-  +width-max(99px)
-    background-color #fec0ff
-+width-max(9.9375em)
-  .class
-    background-color #fec0ff
-
-// @expect
-@media screen and (max-width: 99px) {
-  .class {
-    background-color: #fec0ff;
-  }
-}
-@media screen and (max-width: 9.9375em) {
-  .class {
-    background-color: #fec0ff;
-  }
-}
-
-// @it width-range(int, int) should output content in a media query with a minimum and maximum width
-.class
-  +width-range(100px, 199px)
-    background-color #fec0ff
-+width-range(10em, 19.9375em)
-  .class
-    background-color #fec0ff
-
-// @expect
-@media screen and (min-width: 100px) and (max-width: 199px) {
-  .class {
-    background-color: #fec0ff;
-  }
-}
-@media screen and (min-width: 10em) and (max-width: 19.9375em) {
-  .class {
-    background-color: #fec0ff;
-  }
-}
-
-// @it height-min(int) should output content in a media query with a minimum height
-.class
-  +height-min(100px)
-    background-color #fec0ff
-+height-min(10em)
-  .class
-    background-color #fec0ff
-
-// @expect
-@media screen and (min-height: 100px) {
-  .class {
-    background-color: #fec0ff;
-  }
-}
-@media screen and (min-height: 10em) {
-  .class {
-    background-color: #fec0ff;
-  }
-}
-
-// @it height-max(int) should output content in a media query with a maximum height
-.class
-  +height-max(99px)
-    background-color #fec0ff
-+height-max(9.9375em)
-  .class
-    background-color #fec0ff
-
-// @expect
-@media screen and (max-height: 99px) {
-  .class {
-    background-color: #fec0ff;
-  }
-}
-@media screen and (max-height: 9.9375em) {
-  .class {
-    background-color: #fec0ff;
-  }
-}
-
-// @it height-range(int, int) should output content in a media query with a minimum and maximum height
-.class
-  +height-range(100px, 199px)
-    background-color #fec0ff
-+height-range(10em, 19.9375em)
-  .class
-    background-color #fec0ff
-
-// @expect
-@media screen and (min-height: 100px) and (max-height: 199px) {
-  .class {
-    background-color: #fec0ff;
-  }
-}
-@media screen and (min-height: 10em) and (max-height: 19.9375em) {
-  .class {
-    background-color: #fec0ff;
-  }
-}
-
-
-// @it width-min(int) should output without media queries if $no-mq is true, and `int` is within the fixed bounds.
+// @it output without media queries if $no-mq is true, and `int` is within the fixed bounds.
 +width-min(960px)
   .class
     background-color #fec0ff
@@ -151,7 +52,30 @@ $width--fixed-min = 960px
   background-color: #c0ffee;
 }
 
-// @it width-max(int) should output without media queries if $no-mq is true, and `int` is within the fixed bounds.
+
+// @describe width-max(int)
+
+// @it output content in a media query with a maximum width
+.class
+  +width-max(99px)
+    background-color #fec0ff
++width-max(9.9375em)
+  .class
+    background-color #fec0ff
+
+// @expect
+@media screen and (max-width: 99px) {
+  .class {
+    background-color: #fec0ff;
+  }
+}
+@media screen and (max-width: 9.9375em) {
+  .class {
+    background-color: #fec0ff;
+  }
+}
+
+// @it output without media queries if $no-mq is true, and `int` is within the fixed bounds.
 +width-max(1200px)
   .class
     background-color #fec0ff
@@ -183,7 +107,30 @@ $width--fixed-max = 1200px
   background-color: #c0ffee;
 }
 
-// @it width-range(a, b) should output without media queries if $no-mq is true, and `a` and `b` are within the fixed bounds.
+
+// @describe width-range(int, int)
+
+// @it output content in a media query with a minimum and maximum width
+.class
+  +width-range(100px, 199px)
+    background-color #fec0ff
++width-range(10em, 19.9375em)
+  .class
+    background-color #fec0ff
+
+// @expect
+@media screen and (min-width: 100px) and (max-width: 199px) {
+  .class {
+    background-color: #fec0ff;
+  }
+}
+@media screen and (min-width: 10em) and (max-width: 19.9375em) {
+  .class {
+    background-color: #fec0ff;
+  }
+}
+
+// @it output without media queries if $no-mq is true, and `a` and `b` are within the fixed bounds.
 +width-range(960px, 1200px)
   .class
     background-color #fec0ff
@@ -222,4 +169,70 @@ $width--fixed-max = 1200px
 }
 .class2 {
   background-color: #c0ffee;
+}
+
+
+// @describe height-min(int)
+// @it output content in a media query with a minimum height
+.class
+  +height-min(100px)
+    background-color #fec0ff
++height-min(10em)
+  .class
+    background-color #fec0ff
+
+// @expect
+@media screen and (min-height: 100px) {
+  .class {
+    background-color: #fec0ff;
+  }
+}
+@media screen and (min-height: 10em) {
+  .class {
+    background-color: #fec0ff;
+  }
+}
+
+
+// @describe height-max(int)
+// @it output content in a media query with a maximum height
+.class
+  +height-max(99px)
+    background-color #fec0ff
++height-max(9.9375em)
+  .class
+    background-color #fec0ff
+
+// @expect
+@media screen and (max-height: 99px) {
+  .class {
+    background-color: #fec0ff;
+  }
+}
+@media screen and (max-height: 9.9375em) {
+  .class {
+    background-color: #fec0ff;
+  }
+}
+
+
+// @describe height-range(int, int)
+// @it output content in a media query with a minimum and maximum height
+.class
+  +height-range(100px, 199px)
+    background-color #fec0ff
++height-range(10em, 19.9375em)
+  .class
+    background-color #fec0ff
+
+// @expect
+@media screen and (min-height: 100px) and (max-height: 199px) {
+  .class {
+    background-color: #fec0ff;
+  }
+}
+@media screen and (min-height: 10em) and (max-height: 19.9375em) {
+  .class {
+    background-color: #fec0ff;
+  }
 }
