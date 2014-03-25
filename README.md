@@ -12,7 +12,7 @@ Documentation is still to be written. Mixins can currently be browsed in the `li
 
 ## Testing
 
-```node test```
+```npm test```
 
 ## Coming Soon
 
