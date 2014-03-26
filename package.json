@@ -1,6 +1,6 @@
 {
   "name": "stylus-mixins",
-  "version": "0.0.9",
+  "version": "0.1.0",
   "description": "A collection of useful Stylus mixins",
   "main": "lib/stylus-mixins.js",
   "author": "Jack Brewer",
@@ -12,6 +12,6 @@
     "test": "node test/test-runner.js"
   },
   "devDependencies": {
-    "stylus-test-runner":  "~0.1.0"
+    "stylus-test-runner": "~0.1.0"
   }
 }
