@@ -12,6 +12,6 @@
     "test": "node test/test-runner.js"
   },
   "devDependencies": {
-    "stylus-test-runner": "git://github.com/timjgleeson/stylus-test-runner.git#feature/descriptions"
+    "stylus-test-runner":  "~0.1.0"
   }
 }
