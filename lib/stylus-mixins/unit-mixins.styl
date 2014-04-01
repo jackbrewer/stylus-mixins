@@ -11,6 +11,7 @@
 //
 
 em($px, $base = $baseFontSize)
+  require-unit($px)
   ($px / $base) em
 
 
@@ -20,4 +21,6 @@ em($px, $base = $baseFontSize)
 //
 
 ratio-percentage(a, b)
+  require-unit(a)
+  require-unit(b)
   ( b / a  * 100 ) %

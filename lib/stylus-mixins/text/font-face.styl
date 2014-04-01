@@ -11,6 +11,8 @@
 //
 
 font-face($name, $filepath, $weight = 'normal', $style = 'normal')
+  require-string($name)
+  require-string($filepath)
 
   $url-fallback = 'url("' + $filepath + '.eot")'
   $url  = 'url("' + $filepath + '.eot?#iefix") format("embedded-opentype"), '
