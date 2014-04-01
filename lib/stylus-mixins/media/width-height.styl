@@ -14,14 +14,18 @@ $width--fixed-max ?= 1200px
 //
 
 width-min($a)
+  require-unit($a)
   +_media('width', 'min', $a)
     {block}
 
 width-max($a)
+  require-unit($a)
   +_media('width', 'max', $a)
     {block}
 
 width-range($a, $b)
+  require-unit($a)
+  require-unit($b)
   +_media('width', 'range', $a, $b)
     {block}
 
@@ -31,14 +35,18 @@ width-range($a, $b)
 //
 
 height-min($a)
+  require-unit($a)
   +_media('height', 'min', $a)
     {block}
 
 height-max($a)
+  require-unit($a)
   +_media('height', 'max', $a)
     {block}
 
 height-range($a, $b)
+  require-unit($a)
+  require-unit($b)
   +_media('height', 'range', $a, $b)
     {block}
 

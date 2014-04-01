@@ -32,6 +32,7 @@
 
 
 ie($version, $strict = false)
+  require-unit($version)
   if ($is-ie == true)
     if($strict == true)
       if ($is-ie--version == $version)
