@@ -1,6 +1,6 @@
 {
   "name": "stylus-mixins",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A collection of useful Stylus mixins",
   "main": "lib/stylus-mixins.js",
   "author": "Jack Brewer",
