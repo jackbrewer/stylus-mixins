@@ -19,19 +19,18 @@ npm test
 Mixins can found in the `lib/stylus-mixins` folder. The test directory gives good example usage of each mixin.
 
 ### Clearfix
-```
+```css
 clearfix()
 ```
 
 Outputs a [micro clearfix hack](http://nicolasgallagher.com/micro-clearfix-hack/) on a parent element, to contain floated children elements without adding extra markup.
 
 **Example Usage**
-```
-// Stylus
+```css
 .element
   clearfix()
 
-// CSS
+/* CSS */
 .element {
   zoom: 1; /* Appears for IE7 Only */
 }
