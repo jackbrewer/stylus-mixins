@@ -15,30 +15,30 @@
 
 // @it output in any any of 8 different directions
 .triangle--up-left
-  triangle(up-left)
+  triangle('up-left')
 .triangle--up
-  triangle(up)
+  triangle('up')
 .triangle--up-right
-  triangle(up-right)
+  triangle('up-right')
 .triangle--right
-  triangle(right)
+  triangle('right')
 .triangle--down-right
-  triangle(down-right)
+  triangle('down-right')
 .triangle--down
-  triangle(down)
+  triangle('down')
 .triangle--down-left
-  triangle(down-left)
+  triangle('down-left')
 .triangle--left
-  triangle(left)
+  triangle('left')
 
 // @expect
 .triangle--up-left {
   width: 0;
   height: 0;
-  border-top: 1em solid #777;
-  border-right: 1em solid transparent;
-  border-bottom: 1em solid transparent;
-  border-left: 1em solid #777;
+  border-top: 0.5em solid #777;
+  border-right: 0.5em solid transparent;
+  border-bottom: 0.5em solid transparent;
+  border-left: 0.5em solid #777;
 }
 .triangle--up {
   width: 0;
@@ -50,10 +50,10 @@
 .triangle--up-right {
   width: 0;
   height: 0;
-  border-top: 1em solid #777;
-  border-right: 1em solid #777;
-  border-bottom: 1em solid transparent;
-  border-left: 1em solid transparent;
+  border-top: 0.5em solid #777;
+  border-right: 0.5em solid #777;
+  border-bottom: 0.5em solid transparent;
+  border-left: 0.5em solid transparent;
 }
 .triangle--right {
   width: 0;
@@ -65,10 +65,10 @@
 .triangle--down-right {
   width: 0;
   height: 0;
-  border-top: 1em solid transparent;
-  border-right: 1em solid #777;
-  border-bottom: 1em solid #777;
-  border-left: 1em solid transparent;
+  border-top: 0.5em solid transparent;
+  border-right: 0.5em solid #777;
+  border-bottom: 0.5em solid #777;
+  border-left: 0.5em solid transparent;
 }
 .triangle--down {
   width: 0;
@@ -80,10 +80,10 @@
 .triangle--down-left {
   width: 0;
   height: 0;
-  border-top: 1em solid transparent;
-  border-right: 1em solid transparent;
-  border-bottom: 1em solid #777;
-  border-left: 1em solid #777;
+  border-top: 0.5em solid transparent;
+  border-right: 0.5em solid transparent;
+  border-bottom: 0.5em solid #777;
+  border-left: 0.5em solid #777;
 }
 .triangle--left {
   width: 0;
@@ -96,11 +96,11 @@
 
 // @it output a custom triangle when width and/or color parameters are passed
 .class1
-  triangle(right, 6px, #f00)
+  triangle('right', 6px, #f00)
 .class2
-  triangle(right, , #00f)
+  triangle('right', , #00f)
 .class3
-  triangle(right, 10px)
+  triangle('right', 10px)
 
 // @expect
 .class1 {

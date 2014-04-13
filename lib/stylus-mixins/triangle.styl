@@ -4,26 +4,30 @@
 // Creates a CSS triangle by passing a direction, size, and color
 //
 
-triangle(point = up, size = 1em, color = #777)
+triangle($point = 'up', $size = 1em, $color = #777)
 
-  if size is a 'unit' && color is a 'color'
+  if $size is a 'unit' && $color is a 'color'
 
-    if point == up
-      _triangle-borders({top: '', right: transparent, bottom: solid, left: transparent}, size, color)
-    else if point == right
-      _triangle-borders({top: transparent, right: '', bottom: transparent, left: solid}, size, color)
-    else if point == down
-      _triangle-borders({top: solid, right: transparent, bottom: '', left: transparent}, size, color)
-    else if point == left
-      _triangle-borders({top: transparent, right: solid, bottom: transparent, left: ''}, size, color)
-    else if point == up-left
-      _triangle-borders({top: solid, right: transparent, bottom: transparent, left: solid}, size, color)
-    else if point == up-right
-      _triangle-borders({top: solid, right: solid, bottom: transparent, left: transparent}, size, color)
-    else if point == down-right
-      _triangle-borders({top: transparent, right: solid, bottom: solid, left: transparent}, size, color)
-    else if point == down-left
-      _triangle-borders({top: transparent, right: transparent, bottom: solid, left: solid}, size, color)
+    if $point == 'up'
+      _triangle-borders({top: '', right: transparent, bottom: solid, left: transparent}, $size, $color)
+    else if $point == 'right'
+      _triangle-borders({top: transparent, right: '', bottom: transparent, left: solid}, $size, $color)
+    else if $point == 'down'
+      _triangle-borders({top: solid, right: transparent, bottom: '', left: transparent}, $size, $color)
+    else if $point == 'left'
+      _triangle-borders({top: transparent, right: solid, bottom: transparent, left: ''}, $size, $color)
+    else if $point == 'up-left'
+      $size = ($size / 2)
+      _triangle-borders({top: solid, right: transparent, bottom: transparent, left: solid}, $size, $color)
+    else if $point == 'up-right'
+      $size = ($size / 2)
+      _triangle-borders({top: solid, right: solid, bottom: transparent, left: transparent}, $size, $color)
+    else if $point == 'down-right'
+      $size = ($size / 2)
+      _triangle-borders({top: transparent, right: solid, bottom: solid, left: transparent}, $size, $color)
+    else if $point == 'down-left'
+      $size = ($size / 2)
+      _triangle-borders({top: transparent, right: transparent, bottom: solid, left: solid}, $size, $color)
 
 
 //
@@ -31,13 +35,13 @@ triangle(point = up, size = 1em, color = #777)
 // This mixin should not be called directly
 //
 
-_triangle-borders(sides, size, color)
+_triangle-borders($sides, $size, $color)
 
   width 0
   height 0
 
-  for side, style in sides
-    if style == solid
-      border-{side} size solid color
-    else if style == transparent
-      border-{side} size solid transparent
+  for $side, $style in $sides
+    if $style == solid
+      border-{$side} $size solid $color
+    else if $style == transparent
+      border-{$side} $size solid transparent
