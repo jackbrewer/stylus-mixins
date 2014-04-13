@@ -1,0 +1,10 @@
+// @describe ratio-percentage(a, b)
+
+// @it return a ratio percentage based on two supplied values
+.foo
+  width ratio-percentage(2, 1) // 1/2 = 0.5 = 50%
+
+// @expect
+.foo {
+  width: 50%;
+}

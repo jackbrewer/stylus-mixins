@@ -1,0 +1,10 @@
+//
+// EM
+// ==
+// Returns an em, based on a pased pixel value. Has an optional base value.
+//
+
+$base--font-size ?= 16px
+
+em($px, $base = $base--font-size)
+  ($px / $base) em

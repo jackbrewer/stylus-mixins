@@ -1,0 +1,30 @@
+// @describe em($px, $base = $base--font-size)
+
+// @it convert pixel unit into em value
+.foo
+  width em(16) // 16/16 = 1
+
+// @expect
+.foo {
+  width: 1em;
+}
+
+// @it convert pixel unit into em value with $base--font-size
+$base--font-size = 20px
+
+.foo
+  width em(16) // 16/20 = 1
+
+// @expect
+.foo {
+  width: 0.8em;
+}
+
+// @it convert pixel unit into em value with supplied base unit
+.foo
+  width em(16, 32) // 16/32 = 0.5
+
+// @expect
+.foo {
+  width: 0.5em;
+}
