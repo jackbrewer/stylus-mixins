@@ -4,7 +4,7 @@
 ratio-percentage($numerator, $denominator)
 ```
 
-Returns an percentage, based on a ratio between two passed numbers.
+Returns a percentage, based on a ratio between two passed numbers.
 
 ```css
 @param $numerator
@@ -46,4 +46,4 @@ A common use would be for responsive images and embeds, [without causing reflow]
 
 ---
 
-[Source](https://github.com/jackbrewer/stylus-mixins/blob/master/lib/stylus-mixins/media/ratio-percentage.styl) - [Tests](https://github.com/jackbrewer/stylus-mixins/blob/master/test/tests/media/ratio-percentage.styl)
+[Source](https://github.com/jackbrewer/stylus-mixins/blob/master/lib/stylus-mixins/units/ratio-percentage.styl) - [Tests](https://github.com/jackbrewer/stylus-mixins/blob/master/test/tests/units/ratio-percentage.styl)
