@@ -1,21 +1,21 @@
-// @describe opacity(int, args...)
+// @describe opacity()
 
 // @it output no MS filters if $is-ie is false
-.class1
+.element1
   opacity 1
-.class2
+.element2
   opacity 0.5
-.class3
+.element3
   opacity 0
 
 // @expect
-.class1 {
+.element1 {
   opacity: 1;
 }
-.class2 {
+.element2 {
   opacity: 0.5;
 }
-.class3 {
+.element3 {
   opacity: 0;
 }
 
@@ -23,23 +23,23 @@
 // @it output MS filters if $is-ie is true and $is-ie--version is exactly 8
 $is-ie = true
 $is-ie--version = 8
-.class1
+.element1
   opacity 0
-.class2
+.element2
   opacity 0.5
-.class3
+.element3
   opacity 1
 
 // @expect
-.class1 {
+.element1 {
   opacity: 0;
   -ms-filter: "alpha(opacity=0)";
 }
-.class2 {
+.element2 {
   opacity: .5;
   -ms-filter: "alpha(opacity=50)";
 }
-.class3 {
+.element3 {
   opacity: 1;
   -ms-filter: none;
 }
@@ -48,51 +48,51 @@ $is-ie--version = 8
 // @it output MS filters if $is-ie is true and $is-ie--version is 7 or lower
 $is-ie = true
 $is-ie--version = 7
-.class1
+.element1
   opacity 0
-.class2
+.element2
   opacity 0.5
-.class3
+.element3
   opacity 1
 
 // @expect
-.class1 {
+.element1 {
   opacity: 0;
   filter: alpha(opacity=0);
 }
-.class2 {
+.element2 {
   opacity: 0.5;
   filter: alpha(opacity=50);
 }
-.class3 {
+.element3 {
   opacity: 1;
   filter: none;
 }
 
 
 // @it allow for `!important` to be passed at the end of a declaration
-.class1
+.element1
   opacity 0.5 !important
 
 $is-ie = true
 $is-ie--version = 8
-.class2
+.element2
   opacity 0.5 !important
 
 $is-ie = true
 $is-ie--version = 7
-.class3
+.element3
   opacity 0.5 !important
 
 // @expect
-.class1 {
+.element1 {
   opacity: 0.5 !important;
 }
-.class2 {
+.element2 {
   opacity: 0.5 !important;
   -ms-filter: "alpha(opacity=50)" !important;
 }
-.class3 {
+.element3 {
   opacity: 0.5 !important;
   filter: alpha(opacity=50)  !important;
 }

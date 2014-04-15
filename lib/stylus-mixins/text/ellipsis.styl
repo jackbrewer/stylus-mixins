@@ -1,13 +1,11 @@
 //
 // ELLIPSIS
 // ========
-// Ellipsis with wrapping disabled by default.
-// https://github.com/visionmedia/nib/blob/master/lib/nib/text/ellipsis.styl
 //
 
 
-ellipsis(no-wrap = true)
-  if no-wrap
-    white-space nowrap
-  overflow hidden
+ellipsis($nowrap = true)
   text-overflow ellipsis
+  overflow hidden
+  if $nowrap
+    white-space nowrap

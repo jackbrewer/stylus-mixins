@@ -1,12 +1,12 @@
 // @describe hide-text()
 
 // @it default to output text indent 110%, whitespace nowrap, and overflow hidden
-.class
+.element
   hide-text()
 
 // @expect
-.class {
+.element {
+  overflow: hidden;
   text-indent: 110%;
   white-space: nowrap;
-  overflow: hidden;
 }

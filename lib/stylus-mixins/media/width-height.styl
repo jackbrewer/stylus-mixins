@@ -1,9 +1,10 @@
 //
-// MEDIA WIDTHS/HEIGHTS
-// ====================
+// WIDTH/HEIGHT
+// ============
 //
 
-// Fallback variables
+
+// Default variables
 $no-mq ?= false
 $width--fixed-min ?= 960px
 $width--fixed-max ?= 1200px
@@ -13,16 +14,16 @@ $width--fixed-max ?= 1200px
 // WIDTH BASED
 //
 
-width-min($a)
-  +_media('width', 'min', $a)
+width-min($width)
+  +_media('width', 'min', $width)
     {block}
 
-width-max($a)
-  +_media('width', 'max', $a)
+width-max($width)
+  +_media('width', 'max', $width)
     {block}
 
-width-range($a, $b)
-  +_media('width', 'range', $a, $b)
+width-range($min-width, $max-width)
+  +_media('width', 'range', $min-width, $max-width)
     {block}
 
 
@@ -30,22 +31,21 @@ width-range($a, $b)
 // HEIGHT BASED
 //
 
-height-min($a)
-  +_media('height', 'min', $a)
+height-min($height)
+  +_media('height', 'min', $height)
     {block}
 
-height-max($a)
-  +_media('height', 'max', $a)
+height-max($height)
+  +_media('height', 'max', $height)
     {block}
 
-height-range($a, $b)
-  +_media('height', 'range', $a, $b)
+height-range($min-height, $max-height)
+  +_media('height', 'range', $min-height, $max-height)
     {block}
 
 
 //
 // MEDIA QUERY BUILDER
-// This mixin should not be called directly
 //
 
 _media($direction, $type, $a, $b = false)
@@ -55,7 +55,6 @@ _media($direction, $type, $a, $b = false)
       {block}
 
   else
-
     $mq = ''
     if ($type == 'min' || $type == 'max')
       $mq = 'screen and (' + $type + '-' + $direction + ': ' + $a + ')'
@@ -68,7 +67,6 @@ _media($direction, $type, $a, $b = false)
 
 //
 // NO-MEDIA QUERY BUILDER
-// This mixin should not be called directly
 //
 
 _no-media($direction, $type, $a, $b)

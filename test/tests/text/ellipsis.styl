@@ -1,22 +1,22 @@
-// @describe ellipsis(no-wrap = true)
+// @describe ellipsis()
 
 // @it default to output overflow hidden, text overflow ellipsis, and whitespace nowrap
-.class
+.element
   ellipsis()
 
 // @expect
-.class {
-  white-space: nowrap;
-  overflow: hidden;
+.element {
   text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 // @it no-wrap false to output overflow hidden, and text overflow ellipsis
-.class
+.element
   ellipsis(false)
 
 // @expect
-.class {
-  overflow: hidden;
+.element {
   text-overflow: ellipsis;
+  overflow: hidden;
 }

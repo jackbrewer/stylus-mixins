@@ -1,13 +1,10 @@
 //
-// HI-DPI DEVICES
-// ==============
-// Targets devices with hi-dpi displays.
-//
-// Based on: http://www.brettjankord.com/2012/11/28/cross-browser-retinahigh-resolution-media-queries/
-// and: http://css-tricks.com/snippets/css/retina-display-media-query/
+// HI-DPI
+// ======
 //
 
-media-hidpi($ratio = 1.3)
+
+hidpi($ratio = 1.3)
 
   $mq = '(-webkit-min-device-pixel-ratio: ' + $ratio + '), '
   $mq = $mq + '(min-resolution: ' + floor($ratio * 96) + 'dpi)'
