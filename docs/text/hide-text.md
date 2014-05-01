@@ -23,4 +23,4 @@ Visually hides text using text indent. Commonly used when background images shou
 
 ---
 
-[Source](https://github.com/jackbrewer/stylus-mixins/blob/master/lib/stylus-mixins/media/hide-text.styl) - [Tests](https://github.com/jackbrewer/stylus-mixins/blob/master/test/tests/media/hide-text.styl)
+[Source](https://github.com/jackbrewer/stylus-mixins/blob/master/lib/stylus-mixins/text/hide-text.styl) - [Tests](https://github.com/jackbrewer/stylus-mixins/blob/master/test/tests/text/hide-text.styl)
