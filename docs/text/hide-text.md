@@ -19,6 +19,7 @@ Visually hides text using text indent. Commonly used when background images shou
   text-indent: 110%;
   white-space: nowrap;
 }
+```
 
 ---
 
