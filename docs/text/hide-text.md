@@ -6,6 +6,8 @@ hide-text()
 
 Visually hides text using text indent. Commonly used when background images should appear instead of text content.
 
+This will visually only take effect if used on a block level element, or when used with `display: block` or similar.
+
 ---
 
 **Example**
