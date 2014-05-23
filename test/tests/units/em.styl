@@ -28,3 +28,12 @@ $base--font-size = 20px
 .element {
   width: 0.5em;
 }
+
+// @it no failure when passed a zero value
+.element
+  width em(0)
+
+// @expect
+.element {
+  width: 0;
+}
