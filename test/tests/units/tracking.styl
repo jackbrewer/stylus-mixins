@@ -1,0 +1,30 @@
+// @describe tracking()
+
+// @it convert a tracking unit to an em value when passed one argument
+.element
+  letter-spacing tracking(180)
+
+// @expect
+.element {
+  letter-spacing: 0.18em;
+}
+
+// @it convert a tracking unit to a px value when passed two arguments
+$base--font-size = 20px
+
+.element
+  letter-spacing tracking(180, 15px)
+
+// @expect
+.element {
+  letter-spacing: 2.7px;
+}
+
+// @it no failure when passed a zero value
+.element
+  letter-spacing tracking(0)
+
+// @expect
+.element {
+  letter-spacing: 0;
+}
