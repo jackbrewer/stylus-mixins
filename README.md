@@ -8,7 +8,7 @@ A collection of Stylus mixins which can be used in conjunction with [Stylus Auto
 
 Documentation for each mixin can be found in the [docs directory](https://github.com/jackbrewer/stylus-mixins/tree/master/docs).
 
-Some mixins access internal helper-mixins, which should never be called directly. These helper-mixins always have names beinning with an underscore.
+Some mixins access internal helper-mixins, which should never be called directly. These helper-mixins always have names beginning with an underscore.
 
 ## Running Tests
 
