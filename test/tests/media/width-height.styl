@@ -236,3 +236,18 @@ $width--fixed-max = 1200px
     color: #000;
   }
 }
+
+// @it output nothing $no-mq is true, and height media queries are being used.
+$no-mq = true
+
++height-min(959px)
+  .element1
+    color #000
++height-max(1201px)
+  .element2
+    color #000
++height-range(959px, 1201px)
+  .element3
+    color #000
+
+// @expect
