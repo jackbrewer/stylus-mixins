@@ -1,0 +1,54 @@
+// @describe rem()
+
+// @it convert pixel unit into rem value
+.element
+  width rem(16) // 16/16 = 1
+
+// @expect
+.element {
+  width: 1rem;
+}
+
+// @it convert pixel unit into rem value with $base--font-size
+$base--font-size = 20px
+
+.element
+  width rem(16) // 16/20 = 0.8
+
+// @expect
+.element {
+  width: 0.8rem;
+}
+
+// @it no failure when passed a zero value
+.element
+  width rem(0)
+
+// @expect
+.element {
+  width: 0;
+}
+
+// @it convert pixel unit to rem for IE9+
+$is-ie = true
+$is-ie--version = 9
+
+.element
+  width rem(16)
+
+// @expect
+.element {
+  width: 1rem;
+}
+
+// @it don't convert pixel unit to rem for IE8-
+$is-ie = true
+$is-ie--version = 8
+
+.element
+  width rem(16)
+
+// @expect
+.element {
+  width: 16px;
+}

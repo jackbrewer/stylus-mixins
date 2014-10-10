@@ -1,0 +1,14 @@
+//
+// REM
+// ===
+//
+
+
+// Default Variables
+$base--font-size ?= 16px
+
+rem($px)
+  if $is-ie && $is-ie--version <= 8
+    ($px)px
+  else
+    (round($px / $base--font-size, 3))rem
