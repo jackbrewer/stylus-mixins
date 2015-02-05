@@ -4,7 +4,13 @@
 rem($px)
 ```
 
-Returns an rem value, based on a passed pixel value. IE8 and earlier get a pixel value instead.
+Returns a rem value, based on a passed pixel value. IE8 and earlier get a pixel value instead.
+
+```css
+rem($px $px $px $px)
+```
+
+As shown above, multiple pixel values can be passed to the mixin.
 
 ```css
 $base--font-size ?= 16px
@@ -16,29 +22,30 @@ $base--font-size ?= 16px
 @param $px
   type: unit (pixel)
 ```
-* A pixel value passed to this mixin will be converted to an em value.
+* A pixel value passed to this mixin will be converted to a rem value.
 
 ---
 
 **Example**
 ```css
 .element
-  font-size rem(32) // 32/16 = 2
+  width rem(16 32) // 16/16 = 1, 32/16 = 2
 
 /* CSS */
 .element {
-  font-size: 2em;
+  width: 1rem 2em;
 }
 ```
 
 **Example - IE8 and earlier**
+
 ```css
 .element
-  font-size rem(32)
+  width rem(16 32)
 
 /* CSS */
 .element {
-  font-size: 32px;
+  width: 16px 32px;
 }
 ```
 
