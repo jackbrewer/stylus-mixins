@@ -22,11 +22,11 @@ $base--font-size = 20px
 
 // @it convert pixel unit into em value with supplied base unit
 .element
-  width em(16, 32) // 16/32 = 0.5
+  margin em(16 8, 32) // 16/32 = 0.5, 8/32 = 0.25
 
 // @expect
 .element {
-  width: 0.5em;
+  margin: 0.5em 0.25em;
 }
 
 // @it no failure when passed a zero value
