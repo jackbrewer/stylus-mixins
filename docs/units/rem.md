@@ -1,16 +1,16 @@
 # Rem
 
 ```css
-rem($px)
+rem($px, [$base])
 ```
 
 Returns a rem value, based on a passed pixel value. IE8 and earlier get a pixel value instead.
 
 ```css
-rem($px $px $px $px)
+rem($px $px $px $px, [$base])
 ```
 
-As shown above, multiple pixel values can be passed to the mixin.
+As shown above, multiple pixel values can be passed to the mixin with an optional base font-size.
 
 ```css
 $base--font-size ?= 16px
