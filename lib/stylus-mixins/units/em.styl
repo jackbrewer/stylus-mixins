@@ -7,7 +7,7 @@
 // Default Variables
 $base--font-size ?= 16px
 
-_convert-to-em($px, $base = $base--font-size)
+_convert-to-em($px, $base)
   if (unit($px) == '' && ($px != 0))
     return ($px / $base) em
   else

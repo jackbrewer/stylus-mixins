@@ -40,6 +40,16 @@ $base--font-size = 20px
   margin: 1.6rem 0.8rem;
 }
 
+// @it convert pixel unit into em value with supplied base unit
+$base--font-size = 22px
+.element
+  margin rem(32 16, $base--font-size) // 32/20 = 1.455, 16/20 = 0.727
+
+// @expect
+.element {
+  margin: 1.455rem 0.727rem;
+}
+
 // @it no failure when passed a zero value
 .element
   margin rem(0)

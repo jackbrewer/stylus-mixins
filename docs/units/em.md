@@ -7,6 +7,12 @@ em($px, [$base])
 Returns an em value, based on a passed pixel value.
 
 ```css
+em($px $px $px $px, [$base])
+```
+
+As shown above, multiple pixel values can be passed to the mixin.
+
+```css
 $base--font-size ?= 16px
 ```
 * Sets a base font size, used for calculating em values. Default value is provided.
