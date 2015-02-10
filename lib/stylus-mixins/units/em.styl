@@ -10,6 +10,8 @@ $base--font-size ?= 16px
 _convert-to-em($px, $base = $base--font-size)
   if (unit($px) == '' && ($px != 0))
     return ($px / $base) em
+  else
+    return 0
 
 em($value, $base = $base--font-size)
   $max = length($value)

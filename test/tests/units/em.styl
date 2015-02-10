@@ -2,22 +2,22 @@
 
 // @it convert pixel unit into em value
 .element
-  width em(16) // 16/16 = 1
+  margin em(16) // 16/16 = 1
 
 // @expect
 .element {
-  width: 1em;
+  margin: 1em;
 }
 
 // @it convert pixel unit into em value with $base--font-size
 $base--font-size = 20px
 
 .element
-  width em(16) // 16/20 = 0.8
+  margin em(16) // 16/20 = 0.8
 
 // @expect
 .element {
-  width: 0.8em;
+  margin: 0.8em;
 }
 
 // @it convert pixel unit into em value with supplied base unit
@@ -31,9 +31,9 @@ $base--font-size = 20px
 
 // @it no failure when passed a zero value
 .element
-  width em(0)
+  margin em(0)
 
 // @expect
 .element {
-  width: 0;
+  margin: 0;
 }
