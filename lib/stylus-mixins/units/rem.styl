@@ -7,15 +7,6 @@
 // Default Variables
 $base--font-size ?= 16px
 
-_convert-to-rem($px, $base)
-  if $is-ie && $is-ie--version <= 8
-    ($px)px
-  else if (typeof($px) == 'unit')
-    if (unit($px) == '' && ($px != 0))
-      (round($px / $base, 3))rem
-    else
-      return 0
-
 rem($value, $base = $base--font-size)
   $max = length($value)
 
@@ -24,3 +15,12 @@ rem($value, $base = $base--font-size)
     push($remValues, _convert-to-rem( $value[$i], $base ))
 
   return $remValues
+
+_convert-to-rem($px, $base)
+  if $is-ie && $is-ie--version <= 8
+    ($px)px
+  else if (typeof($px) == 'unit')
+    if (unit($px) == '' && ($px != 0))
+      return (round($px / $base, 3))rem
+    else
+      return 0
