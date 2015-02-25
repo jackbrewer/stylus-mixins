@@ -1,11 +1,23 @@
 //
 // EM
-// ==
+// ===
 //
 
 
 // Default Variables
 $base--font-size ?= 16px
 
-em($px, $base = $base--font-size)
-  ($px / $base) em
+_convert-to-em($px, $base)
+  if (unit($px) == '' && ($px != 0))
+    return ($px / $base) em
+  else
+    return 0
+
+em($value, $base = $base--font-size)
+  $max = length($value)
+
+  $emValues = ()
+  for $i in (0...$max)
+    push($emValues, _convert-to-em( $value[$i], $base ))
+
+  return $emValues
