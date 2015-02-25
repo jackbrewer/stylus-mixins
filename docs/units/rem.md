@@ -4,13 +4,13 @@
 rem($px, [$base])
 ```
 
-Returns a rem value, based on a passed pixel value. IE8 and earlier get a pixel value instead.
+Returns a rem value, based on a passed pixel value with an optional base font-size. IE8 and earlier get a pixel value instead.
 
 ```css
 rem($px $px $px $px, [$base])
 ```
 
-As shown above, multiple pixel values can be passed to the mixin with an optional base font-size.
+Multiple pixel values can be passed to the mixin.
 
 ```css
 $base--font-size ?= 16px
@@ -24,16 +24,47 @@ $base--font-size ?= 16px
 ```
 * A pixel value passed to this mixin will be converted to a rem value.
 
+```css
+@param $base
+  type: unit (pixel)
+  default: $base--font-size
+```
+* Custom base values can be used if required to override the default base font-size.
+
 ---
 
-**Example**
+**Example – single value**
 ```css
 .element
-  width rem(16 32) // 16/16 = 1, 32/16 = 2
+  font-size rem(32) // 32/16 = 2
 
 /* CSS */
 .element {
-  width: 1rem 2em;
+  font-size: 2rem;
+}
+```
+
+**Example - multiple values**
+
+```css
+.element
+  margin rem(16 32) // 16/16 = 1, 32/16 = 2
+
+/* CSS */
+.element {
+  margin: 1rem 2rem;
+}
+```
+
+**Example - custom base font size**
+
+```css
+.element
+  margin rem(16 32, 32) // 16/32 = 0.5, 32/32 = 1
+
+/* CSS */
+.element {
+  margin: 0.5rem 1rem;
 }
 ```
 
@@ -41,11 +72,11 @@ $base--font-size ?= 16px
 
 ```css
 .element
-  width rem(16 32)
+  margin rem(16 32)
 
 /* CSS */
 .element {
-  width: 16px 32px;
+  margin: 16px 32px;
 }
 ```
 
