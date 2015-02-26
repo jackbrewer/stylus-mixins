@@ -59,6 +59,15 @@ $base--font-size = 22px
   margin: 0;
 }
 
+// @it no failure when passed a `px` unit type
+.element
+  margin rem(16px)
+
+// @expect
+.element {
+  margin: 1rem;
+}
+
 // @it not output rem when passed a zero value
 .element
   margin rem(0 32) // 32/16 = 2.0

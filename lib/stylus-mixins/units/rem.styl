@@ -20,7 +20,7 @@ _convert-to-rem($px, $base)
   if $is-ie && $is-ie--version <= 8
     ($px)px
   else if (typeof($px) == 'unit')
-    if (unit($px) == '' && ($px != 0))
+    if ((unit($px) == '' || unit($px) == 'px') && ($px != 0))
       return (round($px / $base, 3))rem
     else
       return 0

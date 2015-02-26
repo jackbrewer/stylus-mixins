@@ -17,7 +17,7 @@ em($value, $base = $base--font-size)
   return $emValues
 
 _convert-to-em($px, $base)
-  if (unit($px) == '' && ($px != 0))
+  if ((unit($px) == '' || unit($px) == 'px') && ($px != 0))
     return (round($px / $base, 3))em
   else
     return 0
