@@ -1,3 +1,8 @@
+0.2.1 / 2015-02-26
+==================
+
+  * Fixed regression - `em()` and `rem()` stopped accepting pixel units
+
 0.2.0 / 2015-02-25
 ==================
 

@@ -17,3 +17,6 @@ All mixins have test coverage to ensure everything works as expected. To run the
 ```
 npm test
 ```
+
+## Licence
+ISC © [Jack Brewer](https://github.com/jackbrewer/)
