@@ -1,0 +1,11 @@
+//
+// COLUMN SPAN WIDTH
+// =================
+// Returns the width of a specified column span
+//
+
+$grid--gutter ?= 20px
+$base--max-width ?= 1200px
+
+col-span-width($col-span, $col-total = 12, $grid-gutter = $grid--gutter, $max-width = $base--max-width)
+  ($max-width + $grid-gutter) * $col-span / $col-total - $grid-gutter
