@@ -33,6 +33,7 @@ Documentation for each mixin can be found in the [docs directory](https://github
 
 **Helpers**
 * [Timing Function Variables](https://github.com/jackbrewer/stylus-mixins/blob/master/docs/helpers/timing-functions.md) - Cubic Bezier values for common easing functions
+* [Column Span Width](https://github.com/jackbrewer/stylus-mixins/blob/master/docs/helpers/col-span-width.md) - col-span-width()
 
 
 ## Running Tests
