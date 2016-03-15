@@ -1,18 +1,18 @@
 # Column Span Width
 
 ```css
-col-span-width($col-span, [$col-total], [$grid-gutter], [$max-width])
+col-span-width($col-span, [$col-total], [$col-gutter], [$max-width])
 ```
 
-Returns the width of a specified column span, based on a grid column total, grid-gutter and max-width.
-The same unit type should be used for the grid-gutter and max-width, as that is what the returned width will use.
+Returns the width of a specified column span, based on a column total, column gutter and max-width.
+The same unit type should be used for the column gutter and max-width, as that is what the returned width will use.
 
 ```css
 $col-total = 12
 $grid--gutter ?= 20px
 $base--max-width ?= 1180px
 ```
-* Default values are provided for column total, grid-gutter and max-width making them optional.
+* Default values are provided for column total, column gutter and max-width making them optional.
 * Use these variables within a project to set custom values.
 
 ---
@@ -28,7 +28,7 @@ $base--max-width ?= 1180px
 }
 ```
 
-**Example - custom column total, grid-gutter and max-width**
+**Example - custom column total, column gutter and max-width**
 
 ```css
 .element
