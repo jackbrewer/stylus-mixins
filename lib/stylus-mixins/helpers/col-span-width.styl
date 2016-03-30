@@ -8,4 +8,8 @@ $grid--gutter ?= 20px
 $base--max-width ?= 1200px
 
 col-span-width($col-span, $col-total = 12, $col-gutter = $grid--gutter, $max-width = $base--max-width)
+
+  if (unit($col-gutter) != unit($max-width))
+    error('Mismatched unit types for provided for col-span-width: ' + $col-gutter + ', ' + $max-width)
+
   ($max-width + $col-gutter) * $col-span / $col-total - $col-gutter
