@@ -14,4 +14,4 @@ col-span-width($col-span, $col-total = $base--col-total, $col-gutter = $grid--gu
   if (unit($col-gutter) != '' && unit($col-gutter) != unit($max-width))
     error('Mismatched unit types for provided for col-span-width: ' + $col-gutter + ', ' + $max-width)
 
-  ($max-width + $col-gutter) * $col-span / $col-total - $col-gutter
+  round(($max-width + $col-gutter) * $col-span / $col-total - $col-gutter, 3)
