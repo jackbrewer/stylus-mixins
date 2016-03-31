@@ -10,7 +10,8 @@ $base--max-width ?= 1180px
 
 col-span-width($col-span, $col-total = $base--col-total, $col-gutter = $grid--gutter, $max-width = $base--max-width)
 
-  if (unit($col-gutter) != unit($max-width))
+  // Check gutter and max-width units match, but allow $col-gutter to be `0`
+  if (unit($col-gutter) != '' && unit($col-gutter) != unit($max-width))
     error('Mismatched unit types for provided for col-span-width: ' + $col-gutter + ', ' + $max-width)
 
   ($max-width + $col-gutter) * $col-span / $col-total - $col-gutter
