@@ -6,7 +6,7 @@
   "author": "Jack Brewer",
   "repository": {
     "type": "git",
-    "url": "git://github.com:jackbrewer/stylus-mixins.git"
+    "url": "https://github.com/jackbrewer/stylus-mixins"
   },
   "scripts": {
     "test": "node test/test-runner.js"
