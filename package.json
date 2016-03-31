@@ -4,9 +4,13 @@
   "description": "A collection of useful Stylus mixins",
   "main": "lib/stylus-mixins.js",
   "author": "Jack Brewer",
+  "license": "ISC",
   "repository": {
     "type": "git",
     "url": "https://github.com/jackbrewer/stylus-mixins"
+  },
+  "publishConfig": {
+    "registry": "http://registry.npmjs.org"
   },
   "scripts": {
     "lint": "eslint -f unix .",

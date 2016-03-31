@@ -2,7 +2,7 @@
 
 # Stylus Mixins
 
-A collection of Stylus mixins which can be used in conjunction with [Stylus Autoprefixer](https://github.com/jenius/autoprefixer-stylus) or similar, to mimic, improve, and extend the functionality of [Nib](http://visionmedia.github.io/nib/).
+A collection of Stylus mixins which can be used in conjunction with [Stylus Autoprefixer](https://github.com/jenius/autoprefixer-stylus) or similar, to mimic, improve, and extend the functionality of [Nib](https://www.npmjs.com/package/nib).
 
 ## Documentation
 
