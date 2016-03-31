@@ -1,3 +1,10 @@
+0.3.1 / 2016-02-26
+==================
+
+  * Documentation updates
+  * Updates test titles to use a more standard style
+  * Adds eslint and fixes linting issues
+
 0.3.0 / 2016-02-26
 ==================
 
