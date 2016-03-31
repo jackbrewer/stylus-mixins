@@ -4,11 +4,40 @@
 col-span-width($col-span, [$col-total], [$col-gutter], [$max-width])
 ```
 
-Returns the width of a specified column span, based on a column total, column gutter and max-width.
-The same unit type should be used for the column gutter and max-width, as that is what the returned width will use.
+Returns the width of a specified column span, based on a column total, column gutter and max-width. The same unit type should be used for the column gutter and max-width, as that is what the returned width will use.
 
 ```css
-$col-total = 12
+@param $col-span
+  type: number (positive, unitless)
+```
+* The number of columns required for the intended width
+
+```css
+@param $col-total
+  type: number (positive, unitless)
+  default: 12
+```
+* The total number of columns in the layout
+
+```css
+@param $col-gutter
+  type: unit (length)
+  default: 20px
+```
+* The gutter size used to separate columns in the layout
+
+```css
+@param $max-width
+  type: unit (length)
+  default: 1180px
+```
+* The overall max-width of the layout
+
+
+### Default Variables
+
+```css
+$base--col-total ?= 12
 $grid--gutter ?= 20px
 $base--max-width ?= 1180px
 ```
@@ -25,6 +54,17 @@ $base--max-width ?= 1180px
 /* CSS */
 .element {
   max-width: 380px;
+}
+```
+
+**Example - custom column total**
+```css
+.element
+  max-width col-span-width(4, 16)
+
+/* CSS */
+.element {
+  max-width: 280px;
 }
 ```
 

@@ -12,6 +12,6 @@
     "test": "node test/test-runner.js"
   },
   "devDependencies": {
-    "stylus-test-runner": "~0.1.0"
+    "stylus-test-runner": "^0.2.0"
   }
 }
