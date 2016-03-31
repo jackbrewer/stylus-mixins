@@ -4,6 +4,7 @@
   * Documentation updates
   * Updates test titles to use a more standard style
   * Adds eslint and fixes linting issues
+  * Updates to config files, fixes link in README
 
 0.3.0 / 2016-02-26
 ==================
