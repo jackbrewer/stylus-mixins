@@ -1,6 +1,6 @@
 // @describe em()
 
-// @it convert pixel unit into em value
+// @it should convert pixel value into em value
 .element
   margin em(16) // 16/16 = 1
 
@@ -9,7 +9,7 @@
   margin: 1em;
 }
 
-// @it convert pixel unit into em value with $base--font-size
+// @it should convert pixel value into em value with $base--font-size
 $base--font-size = 20px
 
 .element
@@ -20,7 +20,7 @@ $base--font-size = 20px
   margin: 0.8em;
 }
 
-// @it convert pixel unit into em value with supplied base unit
+// @it should convert pixel value into em value with supplied base value
 .element
   margin em(16 8, 32) // 16/32 = 0.5, 8/32 = 0.25
 
@@ -29,7 +29,7 @@ $base--font-size = 20px
   margin: 0.5em 0.25em;
 }
 
-// @it no failure when passed a `px` unit type
+// @it should not fail when passed a `px` unit type
 .element
   margin em(16px)
 
@@ -38,7 +38,7 @@ $base--font-size = 20px
   margin: 1em;
 }
 
-// @it no failure when passed a zero value
+// @it should not fail when passed a zero value
 .element
   margin em(0)
 

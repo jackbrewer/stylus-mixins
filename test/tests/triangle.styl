@@ -1,6 +1,6 @@
 // @describe triangle()
 
-// @it output a defualt triangle when no parameters are passed
+// @it should output a defualt triangle when no parameters are passed
 .element
   triangle()
 
@@ -13,7 +13,7 @@
   border-left: 1em solid transparent;
 }
 
-// @it output in any any of 8 different directions
+// @it should output in any any of 8 different directions
 .element--up-left
   triangle('up-left')
 .element--up
@@ -94,7 +94,7 @@
 }
 
 
-// @it output a custom triangle when width and/or color parameters are passed
+// @it should output a custom triangle when width and/or color parameters are passed
 .element1
   triangle('right', 6px, #f00)
 .element2
@@ -126,7 +126,7 @@
 }
 
 
-// @it output nothing if passed parameters are not the expected type
+// @it should output nothing if passed parameters are not the expected type
 .element1
   triangle('right', 3em, #0f0) // correct
 .element2

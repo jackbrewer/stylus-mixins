@@ -1,6 +1,6 @@
 // @describe font-face()
 
-// @it default to output fontface with name and filepath
+// @it should output @fontface with name and filepath
 font-face('FontName', '/fonts/font-name')
 
 // @expect
@@ -12,7 +12,7 @@ font-face('FontName', '/fonts/font-name')
   font-style: normal;
 }
 
-// @it custom weight and style to output fontface with with name, filepath, and optional weight and style parameters
+// @it should output optional custom weight and style parameters
 font-face('FontName', '/fonts/font-name', 'bold', 'italic')
 
 // @expect

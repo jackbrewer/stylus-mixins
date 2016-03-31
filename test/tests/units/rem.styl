@@ -1,6 +1,6 @@
 // @describe rem()
 
-// @it convert pixel unit into rem value
+// @it should convert pixel value into rem value
 .element
   margin rem(16) // 16/16 = 1
 
@@ -9,7 +9,7 @@
   margin: 1rem;
 }
 
-// @it convert multiple pixel units into rem values
+// @it should convert multiple pixel values into rem values
 .element
   margin rem(32 16) // 32/16 = 2, 16/16 = 1
 
@@ -18,7 +18,7 @@
   margin: 2rem 1rem;
 }
 
-// @it convert pixel unit into rem value with $base--font-size
+// @it should convert pixel value into rem value with $base--font-size
 $base--font-size = 20px
 
 .element
@@ -29,7 +29,7 @@ $base--font-size = 20px
   margin: 0.8rem;
 }
 
-// @it convert multiple pixel units into rem values with $base--font-size
+// @it should convert multiple pixel values into rem values with $base--font-size
 $base--font-size = 20px
 
 .element
@@ -40,7 +40,7 @@ $base--font-size = 20px
   margin: 1.6rem 0.8rem;
 }
 
-// @it convert pixel unit into rem value with supplied base unit
+// @it should convert pixel value into rem value with supplied base unit
 $base--font-size = 22px
 .element
   margin rem(32 16, $base--font-size) // 32/20 = 1.455, 16/20 = 0.727
@@ -50,7 +50,7 @@ $base--font-size = 22px
   margin: 1.455rem 0.727rem;
 }
 
-// @it no failure when passed a zero value
+// @it should not fail when passed a zero value
 .element
   margin rem(0)
 
@@ -59,7 +59,7 @@ $base--font-size = 22px
   margin: 0;
 }
 
-// @it no failure when passed a `px` unit type
+// @it should not fail when passed a `px` unit type
 .element
   margin rem(16px)
 
@@ -68,7 +68,7 @@ $base--font-size = 22px
   margin: 1rem;
 }
 
-// @it not output rem when passed a zero value
+// @it should not output rem when passed a zero value
 .element
   margin rem(0 32) // 32/16 = 2.0
 
@@ -77,7 +77,7 @@ $base--font-size = 22px
   margin: 0 2rem;
 }
 
-// @it convert pixel unit to rem for IE9+
+// @it should convert pixel value to rem for IE9+
 $is-ie = true
 $is-ie--version = 9
 
@@ -89,7 +89,7 @@ $is-ie--version = 9
   margin: 1rem;
 }
 
-// @it convert multiple pixel units to rem for IE9+
+// @it should convert multiple pixel values to rem for IE9+
 $is-ie = true
 $is-ie--version = 9
 
@@ -101,7 +101,7 @@ $is-ie--version = 9
   margin: 2rem 1rem;
 }
 
-// @it don't convert pixel unit to rem for IE8-
+// @it should not convert pixel value to rem for IE8-
 $is-ie = true
 $is-ie--version = 8
 
@@ -113,7 +113,7 @@ $is-ie--version = 8
   margin: 16px;
 }
 
-// @it don't convert multiple pixel units to rem for IE8-
+// @it should not convert multiple pixel values to rem for IE8-
 $is-ie = true
 $is-ie--version = 8
 

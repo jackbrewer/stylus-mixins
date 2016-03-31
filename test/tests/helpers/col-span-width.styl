@@ -1,7 +1,7 @@
 // @describe col-span-width()
 
 
-// @it output a column span using default values
+// @it should output a column span using default values
 .foo
   max-width col-span-width(4)
 
@@ -11,7 +11,7 @@
 }
 
 
-// @it output a column span using custom `px` values
+// @it should output a column span using custom `px` values
 $grid--gutter = 10px
 $base--max-width = 1000px
 
@@ -24,7 +24,7 @@ $base--max-width = 1000px
 }
 
 
-// @it output a column span using custom `rem` values
+// @it should output a column span using custom `rem` values
 $grid--gutter = 1rem
 $base--max-width = 100rem
 
@@ -37,7 +37,7 @@ $base--max-width = 100rem
 }
 
 
-// @it output a column span using custom `em` values
+// @it should output a column span using custom `em` values
 $grid--gutter = 1em
 $base--max-width = 100em
 
@@ -50,7 +50,7 @@ $base--max-width = 100em
 }
 
 
-// @it output a column span using a custom column total
+// @it should output a column span using a custom column total
 .foo
   max-width col-span-width(4, 16)
 
@@ -60,7 +60,7 @@ $base--max-width = 100em
 }
 
 
-// @it use custom column total variable if set
+// @it should use custom column total variable if set
 $base--col-total = 10
 .foo
   max-width col-span-width(5)
@@ -71,7 +71,7 @@ $base--col-total = 10
 }
 
 
-// @it output column span using custom gutter and grid width if supplied
+// @it should output column span using custom gutter and grid width if supplied
 .foo
   max-width col-span-width(5, 10, 2rem, 80rem)
 
@@ -81,7 +81,7 @@ $base--col-total = 10
 }
 
 
-// @it not error when passed a zero value as custom gutter
+// @it should not error when passed a zero value as custom gutter
 .foo
   max-width col-span-width(5, 10, 0, 1000px)
 
@@ -90,7 +90,7 @@ $base--col-total = 10
   max-width: 500px;
 }
 
-// @it error when passed mis-matched units for custom gutter and grid width
+// @it should error when passed mis-matched units for custom gutter and grid width
 .foo
   max-width col-span-width(4, 12, 2rem, 1280px)
 

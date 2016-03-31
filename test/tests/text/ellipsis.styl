@@ -1,6 +1,6 @@
 // @describe ellipsis()
 
-// @it default to output overflow hidden, text overflow ellipsis, and whitespace nowrap
+// @it should output default ellipsis styles
 .element
   ellipsis()
 
@@ -11,7 +11,7 @@
   white-space: nowrap;
 }
 
-// @it no-wrap false to output overflow hidden, and text overflow ellipsis
+// @it should omit white-space if $nowrap set to false
 .element
   ellipsis(false)
 

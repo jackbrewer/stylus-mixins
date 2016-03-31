@@ -1,6 +1,6 @@
 // @describe opacity()
 
-// @it output no MS filters if $is-ie is false
+// @it should output no MS filters if $is-ie is false
 .element1
   opacity 1
 .element2
@@ -20,9 +20,10 @@
 }
 
 
-// @it output MS filters if $is-ie is true and $is-ie--version is exactly 8
+// @it should output MS filters if $is-ie is true and $is-ie--version is exactly 8
 $is-ie = true
 $is-ie--version = 8
+
 .element1
   opacity 0
 .element2
@@ -45,9 +46,10 @@ $is-ie--version = 8
 }
 
 
-// @it output MS filters if $is-ie is true and $is-ie--version is 7 or lower
+// @it should output MS filters if $is-ie is true and $is-ie--version is 7 or lower
 $is-ie = true
 $is-ie--version = 7
+
 .element1
   opacity 0
 .element2
@@ -70,7 +72,7 @@ $is-ie--version = 7
 }
 
 
-// @it allow for `!important` to be passed at the end of a declaration
+// @it should allow for `!important` to be passed at the end of a declaration
 .element1
   opacity 0.5 !important
 

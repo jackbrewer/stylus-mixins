@@ -1,6 +1,6 @@
 // @describe width-min()
 
-// @it output content in a media query with a minimum width
+// @it should output content in a media query with a minimum width
 .element
   +width-min(100px)
     color #000
@@ -20,7 +20,7 @@
   }
 }
 
-// @it output without media queries if $no-mq is true, and `int` is within the fixed bounds.
+// @it should output without media queries if $no-mq is true, and `int` is within the fixed bounds.
 +width-min(960px)
   .element
     color #000
@@ -55,7 +55,7 @@ $width--fixed-min = 960px
 
 // @describe width-max()
 
-// @it output content in a media query with a maximum width
+// @it should output content in a media query with a maximum width
 .element
   +width-max(99px)
     color #000
@@ -75,7 +75,7 @@ $width--fixed-min = 960px
   }
 }
 
-// @it output without media queries if $no-mq is true, and `int` is within the fixed bounds.
+// @it should output without media queries if $no-mq is true, and `int` is within the fixed bounds.
 +width-max(1200px)
   .element
     color #000
@@ -110,7 +110,7 @@ $width--fixed-max = 1200px
 
 // @describe width-range()
 
-// @it output content in a media query with a minimum and maximum width
+// @it should output content in a media query with a minimum and maximum width
 .element
   +width-range(100px, 199px)
     color #000
@@ -130,7 +130,7 @@ $width--fixed-max = 1200px
   }
 }
 
-// @it output without media queries if $no-mq is true, and `a` and `b` are within the fixed bounds.
+// @it should output without media queries if $no-mq is true, and `a` and `b` are within the fixed bounds.
 +width-range(960px, 1200px)
   .element
     color #000
@@ -173,7 +173,7 @@ $width--fixed-max = 1200px
 
 
 // @describe height-min()
-// @it output content in a media query with a minimum height
+// @it should output content in a media query with a minimum height
 .element
   +height-min(100px)
     color #000
@@ -195,7 +195,7 @@ $width--fixed-max = 1200px
 
 
 // @describe height-max()
-// @it output content in a media query with a maximum height
+// @it should output content in a media query with a maximum height
 .element
   +height-max(99px)
     color #000
@@ -217,7 +217,7 @@ $width--fixed-max = 1200px
 
 
 // @describe height-range()
-// @it output content in a media query with a minimum and maximum height
+// @it should output content in a media query with a minimum and maximum height
 .element
   +height-range(100px, 199px)
     color #000
@@ -237,7 +237,7 @@ $width--fixed-max = 1200px
   }
 }
 
-// @it output nothing $no-mq is true, and height media queries are being used.
+// @it should output nothing $no-mq is true, and height media queries are being used.
 $no-mq = true
 
 +height-min(959px)
