@@ -1,11 +1,11 @@
 // @describe font-face()
 
 // @it should output @fontface with name and filepath
-font-face('FontName', '/fonts/font-name')
+font-face("Font Name", '/fonts/font-name')
 
 // @expect
 @font-face {
-  font-family: "FontName";
+  font-family: "Font Name";
   src: url("/fonts/font-name.eot");
   src: url("/fonts/font-name.eot?#iefix") format("embedded-opentype"), url("/fonts/font-name.woff") format("woff"), url("/fonts/font-name.ttf") format("truetype"), url("/fonts/font-name.svg#svgFontName") format("svg");
   font-weight: 400;
@@ -13,11 +13,11 @@ font-face('FontName', '/fonts/font-name')
 }
 
 // @it should output optional custom weight and style parameters
-font-face('FontName', '/fonts/font-name', 'bold', 'italic')
+font-face("Font Name", '/fonts/font-name', 'bold', 'italic')
 
 // @expect
 @font-face {
-  font-family: "FontName";
+  font-family: "Font Name";
   src: url("/fonts/font-name.eot");
   src: url("/fonts/font-name.eot?#iefix") format("embedded-opentype"), url("/fonts/font-name.woff") format("woff"), url("/fonts/font-name.ttf") format("truetype"), url("/fonts/font-name.svg#svgFontName") format("svg");
   font-weight: bold;

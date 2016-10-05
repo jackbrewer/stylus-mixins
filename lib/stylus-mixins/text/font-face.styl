@@ -10,7 +10,7 @@ font-face($font-name, $file-path, $weight = 'normal', $style = 'normal')
   $url  = 'url("' + $file-path + '.eot?#iefix") format("embedded-opentype"), '
   $url = $url + 'url("' + $file-path + '.woff") format("woff"), '
   $url = $url + 'url("' + $file-path + '.ttf") format("truetype"), '
-  $url = $url + 'url("' + $file-path + '.svg#svg' + $font-name + '") format("svg")'
+  $url = $url + 'url("' + $file-path + '.svg#svg' + replace(' ', '', $font-name) + '") format("svg")'
 
   @font-face
     font-family $font-name
