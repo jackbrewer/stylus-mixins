@@ -20,7 +20,7 @@
   "devDependencies": {
     "eslint": "^3.9.1",
     "eslint-config-clock": "^2.0.0",
-    "eslint-config-standard": "^6.2.1",
+    "eslint-config-standard": "^10.0.0",
     "eslint-plugin-promise": "^3.3.0",
     "eslint-plugin-standard": "^2.0.1",
     "stylus-test-runner": "^0.2.0"
